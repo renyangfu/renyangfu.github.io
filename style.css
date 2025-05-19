@@ -1,4 +1,4 @@
-/* style.css - 改进后的样式文件 */
+/* style.css - 完整的样式文件，包含增强的动画和布局优化 */
 
 /* 全局样式 */
 body {
@@ -21,17 +21,17 @@ body {
     margin: 40px auto; /* 上下边距40px，左右自动居中 */
     padding: 30px; /* 增加内边距 */
     background-color: #fff; /* 白色内容背景 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 增强阴影效果，更立体 */
     border-radius: 12px; /* 增加圆角 */
     opacity: 0; /* 初始设置为透明，用于入场动画 */
-    animation: fadeIn 1s ease-out forwards; /* 应用淡入动画 */
+    animation: fadeInContainer 1.2s ease-out forwards; /* 应用更慢、更明显的淡入动画 */
 }
 
 /* 容器淡入动画 */
-@keyframes fadeIn {
+@keyframes fadeInContainer {
     from {
         opacity: 0;
-        transform: translateY(30px); /* 从下方稍微移动进入 */
+        transform: translateY(40px); /* 从下方稍微移动进入，距离更大 */
     }
     to {
         opacity: 1;
@@ -50,15 +50,39 @@ header {
 header h1 {
     color: #2c3e50; /* 标题颜色 */
     margin-bottom: 8px; /* 调整底部间距 */
-    font-size: 3em; /* 标题字号 */
+    font-size: 3.2em; /* 标题字号，稍微加大 */
     font-weight: 700; /* 加粗标题 */
+    /* 添加头部标题的进入动画 */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideInHeader 0.8s ease-out forwards 0.5s; /* 延迟0.5s开始 */
 }
+
+@keyframes slideInHeader {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 header p {
     color: #7f8c8d; /* 副标题颜色 */
-    font-size: 1.2em; /* 调整字号 */
+    font-size: 1.3em; /* 调整字号 */
     font-weight: 300; /* 字体稍细 */
+     /* 添加头部副标题的进入动画 */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInSubHeader 0.8s ease-out forwards 0.7s; /* 延迟0.7s开始 */
 }
+
+@keyframes slideInSubHeader {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* 各个section的样式 */
 section {
@@ -66,28 +90,16 @@ section {
     padding-bottom: 30px; /* 增加内边距 */
     border-bottom: 1px dashed #dcdcdc; /* 部分之间用虚线分隔，颜色稍深 */
     opacity: 0; /* 初始透明 */
-    transform: translateY(20px); /* 初始位置稍低，用于滑动入场 */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 添加过渡效果 */
+    transform: translateY(40px); /* 初始位置更低，用于滑动入场 */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* 添加更慢、更明显的过渡效果 */
+    position: relative; /* 用于可能的伪元素或更复杂的动画 */
 }
 
-/* section进入视口后的动画效果（需要JavaScript来触发，这里先定义样式） */
+/* section进入视口后的动画效果（需要JavaScript来触发） */
 section.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* 为每个section设置不同的动画延迟，制造 staggered effect */
-/* 注意：这里的延迟只对初始加载的fadeIn动画有效，对于scroll-based动画需要JavaScript控制 */
-#bio { transition-delay: 0.2s; }
-#contact { transition-delay: 0.3s; }
-#education { transition-delay: 0.4s; }
-#experience { transition-delay: 0.5s; }
-#projects { transition-delay: 0.6s; }
-#teaching_projects { transition-delay: 0.7s; }
-#publications { transition-delay: 0.8s; }
-#courses { transition-delay: 0.9s; }
-#awards { transition-delay: 1s; }
-
 
 /* section标题样式 */
 section h2 {
@@ -95,9 +107,18 @@ section h2 {
     margin-bottom: 20px; /* 增加底部间距 */
     border-left: 5px solid #3498db; /* 小标题左侧的装饰线，加粗 */
     padding-left: 15px; /* 增加左侧内边距 */
-    font-size: 1.8em; /* 调整字号 */
+    font-size: 1.9em; /* 调整字号 */
     font-weight: 600; /* 加粗 */
+    opacity: 0; /* 初始透明 */
+    transform: translateX(-30px); /* 从左侧开始 */
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s; /* 添加过渡效果和延迟 */
 }
+
+section.is-visible h2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 /* 列表样式 */
 section ul {
@@ -112,13 +133,23 @@ section ul li {
     border-radius: 8px; /* 增加圆角 */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* 添加更多过渡效果 */
     position: relative; /* 用于可能的伪元素或更复杂的动画 */
+    opacity: 0; /* 初始透明 */
+    transform: translateX(30px); /* 从右侧开始 */
+     /* 注意：这里的动画需要JavaScript来控制每个li的延迟，或者使用CSS的animation-delay配合父元素的is-visible类 */
 }
+
+/* 列表项进入视口后的动画效果（需要JavaScript来控制每个li的延迟） */
+section.is-visible ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 /* 列表项悬停效果 */
 section ul li:hover {
-    transform: translateX(8px); /* 鼠标悬停时向右轻微移动 */
+    transform: translateX(10px) scale(1.02); /* 鼠标悬停时向右轻微移动并稍微放大 */
     background-color: #dce4e6; /* 鼠标悬停时背景色变深 */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
 }
 
 /* 链接样式 */
@@ -206,6 +237,9 @@ section:last-of-type {
     border-radius: 0; /* 移除圆角 */
     transition: none; /* 移除悬停过渡 */
     line-height: 1.6; /* 调整行高 */
+    opacity: 0; /* 初始透明 */
+    transform: translateY(20px); /* 从下方开始 */
+     /* 注意：这里的动画需要JavaScript来控制每个li的延迟 */
 }
 
 #publications ul li:hover {
@@ -217,7 +251,38 @@ section:last-of-type {
     word-break: break-word; /* 长链接自动换行 */
 }
 
+/* 学术成果列表项进入视口后的动画效果（需要JavaScript来控制每个li的延迟） */
+section#publications.is-visible ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 导航栏样式 */
+nav {
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease, transform 0.2s ease; /* 添加transform过渡 */
+    display: inline-block; /* 使transform生效 */
+}
+
+nav a:hover {
+    color: #3498db;
+    text-decoration: none;
+    transform: translateY(-3px); /* 鼠标悬停时稍微上移 */
+}
+
 /* 可选：添加一个简单的导航栏样式 */
+/*
 nav {
     margin-bottom: 30px;
     text-align: center;
@@ -237,3 +302,19 @@ nav a:hover {
     color: #3498db;
     text-decoration: none;
 }
+*/
+
+/* 可选：添加一个简单的图片进入动画示例 */
+/* 例如，如果你在HTML中添加了 <img src="..." class="profile-img"> */
+/*
+.profile-img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.profile-img.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+*/
