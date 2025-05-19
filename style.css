@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif; /* 使用一种常见的无衬线字体 */
+    line-height: 1.6;
+    margin: 20px; /* 给页面内容留点边距 */
+    max-width: 800px; /* 限制内容最大宽度，在宽屏幕上更易读 */
+    margin-left: auto;
+    margin-right: auto; /* 内容居中 */
+}
+
+h1, h2 {
+    color: #333; /* 标题颜色 */
+}
+
+a {
+    color: #007bff; /* 链接颜色 */
+    text-decoration: none; /* 移除链接下划线 */
+}
+
+a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+ul {
+    list-style: none; /* 移除列表前面的点 */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; /* 列表项之间加点间距 */
+}
