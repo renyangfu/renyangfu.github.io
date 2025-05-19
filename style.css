@@ -1,31 +1,37 @@
+/* style.css - 改进后的样式文件 */
+
+/* 全局样式 */
 body {
-    font-family: 'Segoe UI', 'Roboto', sans-serif; /* 使用现代、易读的字体 */
-    line-height: 1.7; /* 增加行高，提升可读性 */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* 使用更广泛的现代字体栈 */
+    line-height: 1.8; /* 增加行高，提升可读性 */
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* 浅灰色背景 */
+    background-color: #f4f7f6; /* 浅灰色背景，更柔和 */
     color: #333; /* 深灰色文本 */
     display: flex;
     justify-content: center; /* 内容居中 */
     min-height: 100vh; /* 最小高度占满视口 */
+    overflow-x: hidden; /* 防止水平滚动条 */
 }
 
+/* 容器样式 */
 .container {
-    width: 90%;
-    max-width: 800px; /* 限制内容最大宽度 */
+    width: 95%; /* 调整宽度，适应小屏幕 */
+    max-width: 960px; /* 增加最大宽度，适应大屏幕 */
     margin: 40px auto; /* 上下边距40px，左右自动居中 */
-    padding: 20px;
+    padding: 30px; /* 增加内边距 */
     background-color: #fff; /* 白色内容背景 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加微妙的阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
+    border-radius: 12px; /* 增加圆角 */
     opacity: 0; /* 初始设置为透明，用于入场动画 */
     animation: fadeIn 1s ease-out forwards; /* 应用淡入动画 */
 }
 
+/* 容器淡入动画 */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* 从下方稍微移动进入 */
+        transform: translateY(30px); /* 从下方稍微移动进入 */
     }
     to {
         opacity: 1;
@@ -33,65 +39,67 @@ body {
     }
 }
 
-
+/* 头部样式 */
 header {
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eee; /* 底部加一条浅灰色线 */
+    margin-bottom: 50px; /* 增加底部间距 */
+    padding-bottom: 25px; /* 增加内边距 */
+    border-bottom: 2px solid #e0e0e0; /* 底部加一条浅灰色线 */
 }
 
 header h1 {
     color: #2c3e50; /* 标题颜色 */
-    margin-bottom: 5px;
-    font-size: 2.5em; /* 标题字号 */
+    margin-bottom: 8px; /* 调整底部间距 */
+    font-size: 3em; /* 标题字号 */
+    font-weight: 700; /* 加粗标题 */
 }
 
 header p {
     color: #7f8c8d; /* 副标题颜色 */
-    font-size: 1.1em;
+    font-size: 1.2em; /* 调整字号 */
+    font-weight: 300; /* 字体稍细 */
 }
 
+/* 各个section的样式 */
 section {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #eee; /* 部分之间用虚线分隔 */
-    animation: slideIn 0.8s ease-out forwards; /* 应用滑动入场动画 */
+    margin-bottom: 40px; /* 增加底部间距 */
+    padding-bottom: 30px; /* 增加内边距 */
+    border-bottom: 1px dashed #dcdcdc; /* 部分之间用虚线分隔，颜色稍深 */
     opacity: 0; /* 初始透明 */
+    transform: translateY(20px); /* 初始位置稍低，用于滑动入场 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 添加过渡效果 */
+}
+
+/* section进入视口后的动画效果（需要JavaScript来触发，这里先定义样式） */
+section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 为每个section设置不同的动画延迟，制造 staggered effect */
-#bio { animation-delay: 0.3s; }
-#contact { animation-delay: 0.5s; }
-#education { animation-delay: 0.7s; }
-#experience { animation-delay: 0.9s; }
-#projects { animation-delay: 1.1s; }
-#teaching_projects { animation-delay: 1.3s; }
-#publications { animation-delay: 1.5s; }
-#courses { animation-delay: 1.7s; }
-#awards { animation-delay: 1.9s; }
+/* 注意：这里的延迟只对初始加载的fadeIn动画有效，对于scroll-based动画需要JavaScript控制 */
+#bio { transition-delay: 0.2s; }
+#contact { transition-delay: 0.3s; }
+#education { transition-delay: 0.4s; }
+#experience { transition-delay: 0.5s; }
+#projects { transition-delay: 0.6s; }
+#teaching_projects { transition-delay: 0.7s; }
+#publications { transition-delay: 0.8s; }
+#courses { transition-delay: 0.9s; }
+#awards { transition-delay: 1s; }
 
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px); /* 从左侧稍微移动进入 */
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
+/* section标题样式 */
 section h2 {
     color: #34495e; /* 小标题颜色 */
-    margin-bottom: 15px;
-    border-left: 4px solid #3498db; /* 小标题左侧的装饰线 */
-    padding-left: 10px;
-    font-size: 1.6em;
+    margin-bottom: 20px; /* 增加底部间距 */
+    border-left: 5px solid #3498db; /* 小标题左侧的装饰线，加粗 */
+    padding-left: 15px; /* 增加左侧内边距 */
+    font-size: 1.8em; /* 调整字号 */
+    font-weight: 600; /* 加粗 */
 }
 
+/* 列表样式 */
 section ul {
     list-style: none; /* 移除默认列表样式 */
     padding: 0;
@@ -99,21 +107,25 @@ section ul {
 
 section ul li {
     background-color: #ecf0f1; /* 列表项背景色 */
-    margin-bottom: 10px;
-    padding: 12px 15px;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* 添加悬停过渡效果 */
+    margin-bottom: 12px; /* 增加底部间距 */
+    padding: 15px 20px; /* 增加内边距 */
+    border-radius: 8px; /* 增加圆角 */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* 添加更多过渡效果 */
+    position: relative; /* 用于可能的伪元素或更复杂的动画 */
 }
 
+/* 列表项悬停效果 */
 section ul li:hover {
-    transform: translateX(5px); /* 鼠标悬停时向右轻微移动 */
+    transform: translateX(8px); /* 鼠标悬停时向右轻微移动 */
     background-color: #dce4e6; /* 鼠标悬停时背景色变深 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
 
+/* 链接样式 */
 a {
     color: #3498db; /* 链接颜色 */
     text-decoration: none; /* 移除下划线 */
-    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 添加颜色和下划线过渡效果 */
 }
 
 a:hover {
@@ -121,25 +133,46 @@ a:hover {
     text-decoration: underline; /* 鼠标悬停时显示下划线 */
 }
 
+/* 页脚样式 */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #eee; /* 顶部加一条浅灰色线 */
+    margin-top: 50px; /* 增加顶部间距 */
+    padding-top: 25px; /* 增加内边距 */
+    border-top: 1px solid #e0e0e0; /* 顶部加一条浅灰色线 */
     color: #7f8c8d; /* 页脚文本颜色 */
-    font-size: 0.9em;
+    font-size: 1em; /* 调整字号 */
 }
 
 /* 响应式设计 */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
-        width: 95%;
+        width: 98%; /* 在小屏幕上宽度更大 */
         margin: 20px auto;
-        padding: 15px;
+        padding: 20px;
     }
 
     header h1 {
+        font-size: 2.5em;
+    }
+
+    section h2 {
+        font-size: 1.6em;
+        border-left-width: 4px; /* 减小装饰线宽度 */
+        padding-left: 10px; /* 减小左侧内边距 */
+    }
+
+    section ul li {
+         padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
         font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
     }
 
     section h2 {
@@ -151,25 +184,28 @@ footer {
     }
 }
 
+
 /* 确保最后一个 section 没有底部分隔线 */
 section:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
+    margin-bottom: 20px; /* 调整底部间距 */
 }
 
-/* 为学术成果列表项添加一些特有样式，使其更像文献列表 */
+/* 学术成果列表项样式优化 */
 #publications ul {
     list-style-type: decimal; /* 使用数字作为列表标记 */
-    padding-left: 20px; /* 增加左边距 */
+    padding-left: 25px; /* 增加左边距 */
 }
 
 #publications ul li {
     background-color: transparent; /* 移除背景色 */
     border-bottom: 1px dotted #ccc; /* 添加点状底部线 */
-    padding: 10px 0;
-    margin-bottom: 10px;
+    padding: 15px 0; /* 调整内边距 */
+    margin-bottom: 15px; /* 增加底部间距 */
     border-radius: 0; /* 移除圆角 */
-     transition: none; /* 移除悬停过渡 */
+    transition: none; /* 移除悬停过渡 */
+    line-height: 1.6; /* 调整行高 */
 }
 
 #publications ul li:hover {
@@ -178,5 +214,26 @@ section:last-of-type {
 }
 
 #publications a {
-    word-break: break-all; /* 长链接自动换行 */
+    word-break: break-word; /* 长链接自动换行 */
+}
+
+/* 可选：添加一个简单的导航栏样式 */
+nav {
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+    text-decoration: none;
 }
