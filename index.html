@@ -6,7 +6,7 @@
     <title>任洋甫 - 个人主页</title>
     <link rel="stylesheet" href="style.css"> <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 平滑滚动到锚点
+            // Smooth scrolling for navigation links
             const links = document.querySelectorAll('nav a[href^="#"]');
             for (const link of links) {
                 link.addEventListener('click', function(e) {
@@ -18,40 +18,39 @@
                 });
             }
 
-            // Section 进入视口动画
+            // Section Intersection Observer for animations
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // 当 section 进入视口时，添加 is-visible 类触发 CSS 动画
+                        // Add is-visible class to trigger CSS animations
                         entry.target.classList.add('is-visible');
 
-                        // 为当前进入视口的section中的列表项添加逐个动画延迟
+                        // Staggered animation for list items within the visible section
                         const listItems = entry.target.querySelectorAll('ul li');
                         listItems.forEach((item, index) => {
-                            // 设置每个列表项的动画延迟，实现逐个出现效果
-                            item.style.transitionDelay = `${index * 0.1}s`; // 每个列表项延迟0.1s
-                            item.style.transitionDuration = '0.6s'; // 动画持续时间
-                            item.style.transitionTimingFunction = 'ease-out'; // 动画曲线
-                            item.style.transitionProperty = 'opacity, transform'; // 过渡属性
+                            // Set animation delay for each list item
+                            item.style.transitionDelay = `${index * 0.1}s`; // 0.1s delay between items
+                            item.style.transitionDuration = '0.6s'; // Animation duration
+                            item.style.transitionTimingFunction = 'ease-out'; // Animation curve
+                            item.style.transitionProperty = 'opacity, transform'; // Properties to transition
                         });
 
-                        // 如果只需要一次动画，可以在这里停止观察该 section
+                        // Optional: Stop observing after the first intersection
                         // observer.unobserve(entry.target);
 
                     } else {
-                        // 如果希望元素离开视口时动画重置，可以取消注释下面这段代码
+                        // Optional: Reset animation when element leaves viewport
                         /*
                         entry.target.classList.remove('is-visible');
-                         // 离开视口时移除列表项的延迟和过渡，以便下次进入时重新动画
                         const listItems = entry.target.querySelectorAll('ul li');
                         listItems.forEach(item => {
                             item.style.transitionDelay = '';
                             item.style.transitionDuration = '';
                             item.style.transitionTimingFunction = '';
                             item.style.transitionProperty = '';
-                            item.style.opacity = 0; // 重置透明度
-                            // 根据CSS中定义的初始transform重置位置
+                            item.style.opacity = 0; // Reset opacity
+                            // Reset transform based on initial CSS state
                             if (entry.target.id === 'publications') {
                                 item.style.transform = 'translateY(20px)';
                             } else {
@@ -62,10 +61,10 @@
                     }
                 });
             }, {
-                threshold: 0.1 // 当元素10%可见时触发
+                threshold: 0.1 // Trigger when 10% of the element is visible
             });
 
-            // 开始观察所有的 section 元素
+            // Start observing all section elements
             sections.forEach(section => {
                 observer.observe(section);
             });
@@ -112,10 +111,10 @@
         <section id="projects">
             <h2>科研项目</h2>
             <ul>
-                <li>[1] 青海大学2019年中青年基金项目“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；项目负责人。</li>
-                 <li>[2] 国家重点研发计划项目“三维数字交互引擎关键技术研发与开发应用生态构建”2023年11月 至 2026年10月，参与;</li>
-                <li>[3] 国家自然科学基金“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与;</li>
-                <li>[4] 国家自然科学基金项目“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
+                <li>青海大学2019年中青年基金项目“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；项目负责人。</li>
+                 <li>国家重点研发计划项目“三维数字交互引擎关键技术研发与开发应用生态构建”2023年11月 至 2026年10月，参与;</li>
+                <li>国家自然科学基金“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与;</li>
+                <li>国家自然科学基金项目“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
             </ul>
         </section>
 
@@ -134,15 +133,65 @@
        <section id="publications">
             <h2>学术成果</h2>
             <ul>
-                <li>[1]杜欣,任洋甫,胥森哲,等.虚拟现实重定向行走中的场景缩放增益研究[J/OL].图学学报,1-15[2025-05-18].[<a href="http://kns.cnki.net/kcms/detail/10.1034.T.20250306.1759.002.html">http://kns.cnki.net/kcms/detail/10.1034.T.20250306.1759.002.html</a>].</li>
-                <li>[2]任洋甫,于歌,傅月瑶,等.虚拟现实中场景和时间对用户空间方向认知的影响[J].图学学报,2024,45(06):1349-1363.</li>
-                <li>[3]谢泽华,傅月瑶,何煜,等.俯仰视角影响下的虚拟现实头部旋转增益研究[J].计算机科学,2025,52(04):212-221.</li>
-                <li>[4]Liu J H, Ren Y F, Gan Q W, et al. Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques[J]. Journal of Computer Science and Technology, 2024, 39(4): 841-870.</li>
-                <li>[5]任洋甫,李志强,张松海.沉浸式环境中多场景视觉提示信息可视化方法综述[J].中国图象图形学报,2024,29(01):1-21.</li>
-                <li>[6]陈朗,任洋甫,杨培,等.Dynamic Unet+:一种轻量精确的语义分割算法及应用[J].电脑知识与技术,2023,19(11):1-5.DOI:10.14004/j.cnki.ckt.2023.0602.</li>
-                <li>[7]任洋甫,普园媛,徐丹,等.语义值驱动的三维直立状态人体模型变形[J].系统仿真学报,2019,31(03):476-485.DOI:10.16182/j.issn1004731x.joss.17DEA-007.</li>
-                <li>[8]杨培,陈沿锦,贾金芳,等.一种改进的快速迭代阈值选择算法[J].青海大学学报,2018,36(03):34-39.DOI:10.13901/j.cnki.qhwxxbzk.2018.03.006.</li>
-                <li>[9]刘玉清,普园媛,任洋甫,等.梵高绘画风格特点的数字化分析[J].系统仿真学报,2015,27(04):779-785.DOI:10.16182/j.cnki.joss.2015.04.015.</li>
+                <li>
+                    <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
+                    <span class="title">虚拟现实重定向行走中的场景缩放增益研究</span>
+                    <span class="publication-info">[J/OL]. <span class="venue">图学学报</span>, 1-15</span>
+                    <span class="year">(2025).</span>
+                    <span class="link">[<a href="http://kns.cnki.net/kcms/detail/10.1034.T.20250306.1759.002.html">链接</a>]</span>
+                </li>
+                <li>
+                    <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
+                    <span class="title">虚拟现实中场景和时间对用户空间方向认知的影响</span>
+                    <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
+                    <span class="year">(2024).</span>
+                </li>
+                <li>
+                    <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
+                    <span class="title">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
+                    <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
+                    <span class="year">(2025).</span>
+                </li>
+                <li>
+                    <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
+                    <span class="title">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>
+                    <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
+                     <span class="year">(2024).</span>
+                </li>
+                <li>
+                    <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
+                    <span class="title">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
+                    <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
+                     <span class="year">(2024).</span>
+                </li>
+                <li>
+                    <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
+                    <span class="title">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
+                    <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
+                     <span class="year">(2023).</span>
+                    <span class="doi">DOI:10.14004/j.cnki.ckt.2023.0602.</span>
+                </li>
+                <li>
+                    <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
+                    <span class="title">语义值驱动的三维直立状态人体模型变形</span>
+                    <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
+                     <span class="year">(2019).</span>
+                    <span class="doi">DOI:10.16182/j.issn1004731x.joss.17DEA-007.</span>
+                </li>
+                <li>
+                    <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
+                    <span class="title">一种改进的快速迭代阈值选择算法</span>
+                    <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
+                    <span class="year">(2018).</span>
+                    <span class="doi">DOI:10.13901/j.cnki.qhwxxbzk.2018.03.006.</span>
+                </li>
+                <li>
+                    <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
+                    <span class="title">梵高绘画风格特点的数字化分析</span>
+                    <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
+                     <span class="year">(2015).</span>
+                    <span class="doi">DOI:10.16182/j.cnki.joss.2015.04.015.</span>
+                </li>
             </ul>
         </section>
 
