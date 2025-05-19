@@ -6,6 +6,7 @@
     <title>任洋甫 - 个人主页</title>
     <link rel="stylesheet" href="style.css"> <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动到锚点
             const links = document.querySelectorAll('nav a[href^="#"]');
             for (const link of links) {
                 link.addEventListener('click', function(e) {
@@ -17,23 +18,54 @@
                 });
             }
 
-            // 可选：实现简单的scroll-based动画
+            // Section 进入视口动画
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        // 当 section 进入视口时，添加 is-visible 类触发 CSS 动画
                         entry.target.classList.add('is-visible');
-                        // 如果只需要一次动画，可以在这里停止观察
+
+                        // 为当前进入视口的section中的列表项添加逐个动画延迟
+                        const listItems = entry.target.querySelectorAll('ul li');
+                        listItems.forEach((item, index) => {
+                            // 设置每个列表项的动画延迟，实现逐个出现效果
+                            item.style.transitionDelay = `${index * 0.1}s`; // 每个列表项延迟0.1s
+                            item.style.transitionDuration = '0.6s'; // 动画持续时间
+                            item.style.transitionTimingFunction = 'ease-out'; // 动画曲线
+                            item.style.transitionProperty = 'opacity, transform'; // 过渡属性
+                        });
+
+                        // 如果只需要一次动画，可以在这里停止观察该 section
                         // observer.unobserve(entry.target);
+
                     } else {
-                        // 如果希望元素离开视口时动画重置，可以取消注释下面一行
-                        // entry.target.classList.remove('is-visible');
+                        // 如果希望元素离开视口时动画重置，可以取消注释下面这段代码
+                        /*
+                        entry.target.classList.remove('is-visible');
+                         // 离开视口时移除列表项的延迟和过渡，以便下次进入时重新动画
+                        const listItems = entry.target.querySelectorAll('ul li');
+                        listItems.forEach(item => {
+                            item.style.transitionDelay = '';
+                            item.style.transitionDuration = '';
+                            item.style.transitionTimingFunction = '';
+                            item.style.transitionProperty = '';
+                            item.style.opacity = 0; // 重置透明度
+                            // 根据CSS中定义的初始transform重置位置
+                            if (entry.target.id === 'publications') {
+                                item.style.transform = 'translateY(20px)';
+                            } else {
+                                item.style.transform = 'translateX(30px)';
+                            }
+                        });
+                        */
                     }
                 });
             }, {
                 threshold: 0.1 // 当元素10%可见时触发
             });
 
+            // 开始观察所有的 section 元素
             sections.forEach(section => {
                 observer.observe(section);
             });
@@ -44,7 +76,7 @@
     <div class="container"> <header>
             <h1>任洋甫</h1>
             <p>青海大学计算机技术与应用系 讲师</p>
-        </header>
+            </header>
 
         <nav>
             <a href="#bio">简介</a>
@@ -142,7 +174,6 @@
                 <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
             </p>
         </section>
-
 
         <footer>
             <p>&copy; 2025 任洋甫</p>
