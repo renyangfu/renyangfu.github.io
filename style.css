@@ -1,37 +1,37 @@
-/* style.css - 进一步改进的样式文件，重点优化学术成果展示 */
+/* style.css - 最终版样式文件，优化学术成果展示（带正式编号） */
 
-/* 全局样式 */
+/* Global Styles */
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* 使用更广泛的现代字体栈 */
-    line-height: 1.8; /* 增加行高，提升可读性 */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Use a wider modern font stack */
+    line-height: 1.8; /* Increase line height for better readability */
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* 浅灰色背景，更柔和 */
-    color: #333; /* 深灰色文本 */
+    background-color: #f4f7f6; /* Soft grey background */
+    color: #333; /* Dark grey text */
     display: flex;
-    justify-content: center; /* 内容居中 */
-    min-height: 100vh; /* 最小高度占满视口 */
-    overflow-x: hidden; /* 防止水平滚动条 */
+    justify-content: center; /* Center content */
+    min-height: 100vh; /* Minimum height to fill viewport */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
-/* 容器样式 */
+/* Container Styles */
 .container {
-    width: 95%; /* 调整宽度，适应小屏幕 */
-    max-width: 960px; /* 增加最大宽度，适应大屏幕 */
-    margin: 40px auto; /* 上下边距40px，左右自动居中 */
-    padding: 30px; /* 增加内边距 */
-    background-color: #fff; /* 白色内容背景 */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 增强阴影效果，更立体 */
-    border-radius: 12px; /* 增加圆角 */
-    opacity: 0; /* 初始设置为透明，用于入场动画 */
-    animation: fadeInContainer 1.2s ease-out forwards; /* 应用更慢、更明显的淡入动画 */
+    width: 95%; /* Adjust width for small screens */
+    max-width: 960px; /* Increase max width for large screens */
+    margin: 40px auto; /* 40px top/bottom margin, auto left/right for centering */
+    padding: 30px; /* Increase padding */
+    background-color: #fff; /* White content background */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow effect */
+    border-radius: 12px; /* Increase border radius */
+    opacity: 0; /* Initial opacity for entrance animation */
+    animation: fadeInContainer 1.2s ease-out forwards; /* Apply a slower, more noticeable fade-in animation */
 }
 
-/* 容器淡入动画 */
+/* Container Fade-in Animation */
 @keyframes fadeInContainer {
     from {
         opacity: 0;
-        transform: translateY(40px); /* 从下方稍微移动进入，距离更大 */
+        transform: translateY(40px); /* Start slightly below */
     }
     to {
         opacity: 1;
@@ -39,23 +39,23 @@ body {
     }
 }
 
-/* 头部样式 */
+/* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 50px; /* 增加底部间距 */
-    padding-bottom: 25px; /* 增加内边距 */
-    border-bottom: 2px solid #e0e0e0; /* 底部加一条浅灰色线 */
+    margin-bottom: 50px; /* Increase bottom margin */
+    padding-bottom: 25px; /* Increase bottom padding */
+    border-bottom: 2px solid #e0e0e0; /* Light grey bottom border */
 }
 
 header h1 {
-    color: #2c3e50; /* 标题颜色 */
-    margin-bottom: 8px; /* 调整底部间距 */
-    font-size: 3.2em; /* 标题字号，稍微加大 */
-    font-weight: 700; /* 加粗标题 */
-    /* 添加头部标题的进入动画 */
+    color: #2c3e50; /* Title color */
+    margin-bottom: 8px; /* Adjust bottom margin */
+    font-size: 3.2em; /* Title font size, slightly larger */
+    font-weight: 700; /* Bold title */
+    /* Entrance animation for header title */
     opacity: 0;
     transform: translateY(-20px);
-    animation: slideInHeader 0.8s ease-out forwards 0.5s; /* 延迟0.5s开始 */
+    animation: slideInHeader 0.8s ease-out forwards 0.5s; /* Start with a delay */
 }
 
 @keyframes slideInHeader {
@@ -67,13 +67,13 @@ header h1 {
 
 
 header p {
-    color: #7f8c8d; /* 副标题颜色 */
-    font-size: 1.3em; /* 调整字号 */
-    font-weight: 300; /* 字体稍细 */
-     /* 添加头部副标题的进入动画 */
+    color: #7f8c8d; /* Subtitle color */
+    font-size: 1.3em; /* Adjust font size */
+    font-weight: 300; /* Lighter font weight */
+     /* Entrance animation for header subtitle */
     opacity: 0;
     transform: translateY(20px);
-    animation: slideInSubHeader 0.8s ease-out forwards 0.7s; /* 延迟0.7s开始 */
+    animation: slideInSubHeader 0.8s ease-out forwards 0.7s; /* Start with a delay */
 }
 
 @keyframes slideInSubHeader {
@@ -84,34 +84,34 @@ header p {
 }
 
 
-/* 各个section的样式 */
+/* Section Styles */
 section {
-    margin-bottom: 40px; /* 增加底部间距 */
-    padding-bottom: 30px; /* 增加内边距 */
-    border-bottom: 1px dashed #dcdcdc; /* 部分之间用虚线分隔，颜色稍深 */
-    opacity: 0; /* 初始透明 */
-    transform: translateY(40px); /* 初始位置更低，用于滑动入场 */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* 添加更慢、更明显的过渡效果 */
-    position: relative; /* 用于可能的伪元素或更复杂的动画 */
+    margin-bottom: 40px; /* Increase bottom margin */
+    padding-bottom: 30px; /* Increase bottom padding */
+    border-bottom: 1px dashed #dcdcdc; /* Dashed bottom border */
+    opacity: 0; /* Initial opacity for scroll animation */
+    transform: translateY(40px); /* Initial position for slide-in */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Add transition effect */
+    position: relative; /* For potential pseudo-elements or complex animations */
 }
 
-/* section进入视口后的动画效果（需要JavaScript来触发） */
+/* Section visible in viewport animation (triggered by JavaScript) */
 section.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* section标题样式 */
+/* Section Title Styles */
 section h2 {
-    color: #34495e; /* 小标题颜色 */
-    margin-bottom: 20px; /* 增加底部间距 */
-    border-left: 5px solid #3498db; /* 小标题左侧的装饰线，加粗 */
-    padding-left: 15px; /* 增加左侧内边距 */
-    font-size: 1.9em; /* 调整字号 */
-    font-weight: 600; /* 加粗 */
-    opacity: 0; /* 初始透明 */
-    transform: translateX(-30px); /* 从左侧开始 */
-    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s; /* 添加过渡效果和延迟 */
+    color: #34495e; /* Section title color */
+    margin-bottom: 20px; /* Increase bottom margin */
+    border-left: 5px solid #3498db; /* Decorative left border */
+    padding-left: 15px; /* Increase left padding */
+    font-size: 1.9em; /* Adjust font size */
+    font-weight: 600; /* Bold */
+    opacity: 0; /* Initial opacity */
+    transform: translateX(-30px); /* Start from the left */
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s; /* Add transition and delay */
 }
 
 section.is-visible h2 {
@@ -120,65 +120,65 @@ section.is-visible h2 {
 }
 
 
-/* 列表样式 (除学术成果外) */
+/* List Styles (excluding publications) */
 section:not(#publications) ul {
-    list-style: none; /* 移除默认列表样式 */
+    list-style: none; /* Remove default list style */
     padding: 0;
 }
 
 section:not(#publications) ul li {
-    background-color: #ecf0f1; /* 列表项背景色 */
-    margin-bottom: 12px; /* 增加底部间距 */
-    padding: 15px 20px; /* 增加内边距 */
-    border-radius: 8px; /* 增加圆角 */
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* 添加更多过渡效果 */
-    position: relative; /* 用于可能的伪元素或更复杂的动画 */
-    opacity: 0; /* 初始透明 */
-    transform: translateX(30px); /* 从右侧开始 */
-     /* 注意：这里的动画需要JavaScript来控制每个li的延迟，或者使用CSS的animation-delay配合父元素的is-visible类 */
+    background-color: #ecf0f1; /* List item background color */
+    margin-bottom: 12px; /* Increase bottom margin */
+    padding: 15px 20px; /* Increase padding */
+    border-radius: 8px; /* Add border radius */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add more transition effects */
+    position: relative; /* For potential pseudo-elements or complex animations */
+    opacity: 0; /* Initial opacity */
+    transform: translateX(30px); /* Start from the right */
+     /* Note: Staggered animation for these list items requires JavaScript to control delay */
 }
 
-/* 列表项进入视口后的动画效果（除学术成果外） */
+/* List items visible in viewport animation (excluding publications) */
 section:not(#publications).is-visible ul li {
     opacity: 1;
     transform: translateX(0);
 }
 
 
-/* 列表项悬停效果 (除学术成果外) */
+/* List item hover effect (excluding publications) */
 section:not(#publications) ul li:hover {
-    transform: translateX(10px) scale(1.02); /* 鼠标悬停时向右轻微移动并稍微放大 */
-    background-color: #dce4e6; /* 鼠标悬停时背景色变深 */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
+    transform: translateX(10px) scale(1.02); /* Slightly move right and scale up on hover */
+    background-color: #dce4e6; /* Darker background on hover */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* Add shadow effect */
 }
 
 
-/* 链接样式 */
+/* Link Styles */
 a {
-    color: #3498db; /* 链接颜色 */
-    text-decoration: none; /* 移除下划线 */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* 添加颜色和下划线过渡效果 */
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Add color and underline transition */
 }
 
 a:hover {
-    color: #2980b9; /* 鼠标悬停时链接颜色变深 */
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+    color: #2980b9; /* Darker link color on hover */
+    text-decoration: underline; /* Show underline on hover */
 }
 
-/* 页脚样式 */
+/* Footer Styles */
 footer {
     text-align: center;
-    margin-top: 50px; /* 增加顶部间距 */
-    padding-top: 25px; /* 增加内边距 */
-    border-top: 1px solid #e0e0e0; /* 顶部加一条浅灰色线 */
-    color: #7f8c8d; /* 页脚文本颜色 */
-    font-size: 1em; /* 调整字号 */
+    margin-top: 50px; /* Increase top margin */
+    padding-top: 25px; /* Increase top padding */
+    border-top: 1px solid #e0e0e0; /* Light grey top border */
+    color: #7f8c8d; /* Footer text color */
+    font-size: 1em; /* Adjust font size */
 }
 
-/* 响应式设计 */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        width: 98%; /* 在小屏幕上宽度更大 */
+        width: 98%; /* Wider on small screens */
         margin: 20px auto;
         padding: 20px;
     }
@@ -189,8 +189,8 @@ footer {
 
     section h2 {
         font-size: 1.6em;
-        border-left-width: 4px; /* 减小装饰线宽度 */
-        padding-left: 10px; /* 减小左侧内边距 */
+        border-left-width: 4px; /* Reduce decorative line width */
+        padding-left: 10px; /* Reduce left padding */
     }
 
     section ul li {
@@ -217,68 +217,130 @@ footer {
 }
 
 
-/* 确保最后一个 section 没有底部分隔线 */
+/* Ensure the last section has no bottom border */
 section:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 20px; /* 调整底部间距 */
+    margin-bottom: 20px; /* Adjust bottom margin */
 }
 
-/* 学术成果列表样式优化 */
+/* Academic Publications List Styles */
 #publications ul {
-    list-style: none; /* 移除默认列表样式，我们将使用自定义编号 */
+    list-style: none; /* Remove default list style */
     padding: 0;
+    counter-reset: publication-counter; /* Reset the counter for this list */
 }
 
 #publications ul li {
-    background-color: #fff; /* 学术成果列表项使用白色背景，与容器背景区分 */
-    margin-bottom: 20px; /* 增加底部间距，让每项更独立 */
-    padding: 15px 20px; /* 增加内边距 */
-    border: 1px solid #e0e0e0; /* 添加边框 */
-    border-radius: 8px; /* 添加圆角 */
-    line-height: 1.7; /* 调整行高 */
+    background-color: #fff; /* White background for publication items */
+    margin-bottom: 20px; /* Increase bottom margin for separation */
+    padding: 15px 20px; /* Increase padding */
+    border: 1px solid #e0e0e0; /* Add border */
+    border-radius: 8px; /* Add border radius */
+    line-height: 1.7; /* Adjust line height */
     position: relative;
-    opacity: 0; /* 初始透明 */
-    transform: translateY(20px); /* 从下方开始 */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 添加过渡效果 */
-    counter-increment: publication-counter; /* 为列表项创建计数器 */
+    opacity: 0; /* Initial opacity for animation */
+    transform: translateY(20px); /* Start from below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Add transition */
+    display: flex; /* Use flexbox for layout control */
+    flex-direction: column; /* Stack elements vertically */
+    counter-increment: publication-counter; /* Increment the counter for each list item */
+    padding-left: 40px; /* Add padding to the left to make space for the number */
 }
 
-/* 学术成果列表项前的编号 */
+/* Academic publication list item number */
 #publications ul li::before {
-    content: "[" counter(publication-counter) "] "; /* 使用计数器生成编号 */
-    font-weight: bold; /* 编号加粗 */
-    color: #34495e; /* 编号颜色 */
-    margin-right: 10px; /* 编号与文本的间距 */
+    content: counter(publication-counter) ". "; /* Display the counter followed by a period and space */
+    font-weight: bold; /* Bold number */
+    color: #34495e; /* Number color */
+    position: absolute; /* Position the number absolutely */
+    left: 15px; /* Adjust left position */
+    top: 15px; /* Align with the top of the list item */
+    width: 20px; /* Give the number a fixed width for alignment */
+    text-align: right; /* Align number to the right */
 }
 
-/* 学术成果列表项进入视口后的动画效果（需要JavaScript来控制每个li的延迟） */
+
+/* Styles for different parts of the publication entry */
+#publications ul li .authors {
+    font-weight: bold; /* Bold authors */
+    color: #555; /* Author color */
+    margin-bottom: 5px; /* Space below authors */
+    display: block; /* Make authors span a block element for better spacing */
+}
+
+#publications ul li .authors .self {
+    color: #3498db; /* Highlight your name */
+    font-weight: 700; /* Make your name bolder */
+}
+
+#publications ul li .title {
+    font-style: italic; /* Italicize title */
+    color: #007bff; /* Title color */
+    margin-bottom: 5px; /* Space below title */
+    display: block; /* Make title span a block element */
+}
+
+#publications ul li .publication-info {
+    color: #666; /* Color for publication info */
+    font-size: 0.95em; /* Slightly smaller font size */
+    margin-bottom: 5px; /* Space below publication info */
+    display: block; /* Make publication info span a block element */
+}
+
+#publications ul li .venue {
+    font-weight: 600; /* Bold venue */
+    color: #333; /* Venue color */
+}
+
+#publications ul li .year {
+    color: #777; /* Color for year */
+    font-size: 0.9em; /* Smaller font size for year */
+    margin-left: 5px; /* Space after publication info */
+}
+
+#publications ul li .doi {
+     color: #777; /* Color for DOI */
+     font-size: 0.9em; /* Smaller font size for DOI */
+     margin-top: 5px; /* Space above DOI */
+     display: block; /* Make DOI span a block element */
+}
+
+#publications ul li .link {
+    margin-top: 5px; /* Space above link */
+    display: block; /* Make link span a block element */
+}
+
+
+/* Academic publication list item visible in viewport animation (requires JavaScript for staggered effect) */
 section#publications.is-visible ul li {
     opacity: 1;
     transform: translateY(0);
 }
 
 #publications ul li:hover {
-     /* 学术成果列表项悬停时可以添加 subtle 效果 */
-     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-     background-color: #f9f9f9; /* 悬停时背景色轻微变化 */
+     /* Subtle hover effect for publication items */
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+     background-color: #f9f9f9; /* Slight background change on hover */
 }
 
 
 #publications a {
-    word-break: break-word; /* 长链接自动换行 */
-    color: #3498db; /* 链接颜色 */
-    text-decoration: none; /* 移除下划线 */
+    word-break: break-word; /* Break long links */
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
     transition: color 0.3s ease, text-decoration 0.3s ease;
+    font-size: 0.9em; /* Smaller font size for links */
+    /* Removed margin-top and display: inline-block here, using the .link span for layout */
 }
 
 #publications a:hover {
-    color: #2980b9; /* 鼠标悬停时链接颜色变深 */
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+    color: #2980b9; /* Darker link color on hover */
+    text-decoration: underline; /* Show underline on hover */
 }
 
 
-/* 导航栏样式 */
+/* Navigation bar styles */
 nav {
     margin-bottom: 30px;
     text-align: center;
@@ -291,18 +353,18 @@ nav a {
     font-size: 1.1em;
     font-weight: 500;
     color: #555;
-    transition: color 0.3s ease, transform 0.2s ease; /* 添加transform过渡 */
-    display: inline-block; /* 使transform生效 */
+    transition: color 0.3s ease, transform 0.2s ease; /* Add transform transition */
+    display: inline-block; /* Make transform work */
 }
 
 nav a:hover {
     color: #3498db;
     text-decoration: none;
-    transform: translateY(-3px); /* 鼠标悬停时稍微上移 */
+    transform: translateY(-3px); /* Slightly move up on hover */
 }
 
-/* 可选：添加一个简单的图片进入动画示例 */
-/* 例如，如果你在HTML中添加了 <img src="..." class="profile-img"> */
+/* Optional: Simple image entrance animation example */
+/* If you add <img src="..." class="profile-img"> in your HTML */
 /*
 .profile-img {
     opacity: 0;
