@@ -1,4 +1,4 @@
-/* style.css - 完整的样式文件，包含增强的动画和布局优化 */
+/* style.css - 进一步改进的样式文件，重点优化学术成果展示 */
 
 /* 全局样式 */
 body {
@@ -120,13 +120,13 @@ section.is-visible h2 {
 }
 
 
-/* 列表样式 */
-section ul {
+/* 列表样式 (除学术成果外) */
+section:not(#publications) ul {
     list-style: none; /* 移除默认列表样式 */
     padding: 0;
 }
 
-section ul li {
+section:not(#publications) ul li {
     background-color: #ecf0f1; /* 列表项背景色 */
     margin-bottom: 12px; /* 增加底部间距 */
     padding: 15px 20px; /* 增加内边距 */
@@ -138,19 +138,20 @@ section ul li {
      /* 注意：这里的动画需要JavaScript来控制每个li的延迟，或者使用CSS的animation-delay配合父元素的is-visible类 */
 }
 
-/* 列表项进入视口后的动画效果（需要JavaScript来控制每个li的延迟） */
-section.is-visible ul li {
+/* 列表项进入视口后的动画效果（除学术成果外） */
+section:not(#publications).is-visible ul li {
     opacity: 1;
     transform: translateX(0);
 }
 
 
-/* 列表项悬停效果 */
-section ul li:hover {
+/* 列表项悬停效果 (除学术成果外) */
+section:not(#publications) ul li:hover {
     transform: translateX(10px) scale(1.02); /* 鼠标悬停时向右轻微移动并稍微放大 */
     background-color: #dce4e6; /* 鼠标悬停时背景色变深 */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
 }
+
 
 /* 链接样式 */
 a {
@@ -223,38 +224,57 @@ section:last-of-type {
     margin-bottom: 20px; /* 调整底部间距 */
 }
 
-/* 学术成果列表项样式优化 */
+/* 学术成果列表样式优化 */
 #publications ul {
-    list-style-type: decimal; /* 使用数字作为列表标记 */
-    padding-left: 25px; /* 增加左边距 */
+    list-style: none; /* 移除默认列表样式，我们将使用自定义编号 */
+    padding: 0;
 }
 
 #publications ul li {
-    background-color: transparent; /* 移除背景色 */
-    border-bottom: 1px dotted #ccc; /* 添加点状底部线 */
-    padding: 15px 0; /* 调整内边距 */
-    margin-bottom: 15px; /* 增加底部间距 */
-    border-radius: 0; /* 移除圆角 */
-    transition: none; /* 移除悬停过渡 */
-    line-height: 1.6; /* 调整行高 */
+    background-color: #fff; /* 学术成果列表项使用白色背景，与容器背景区分 */
+    margin-bottom: 20px; /* 增加底部间距，让每项更独立 */
+    padding: 15px 20px; /* 增加内边距 */
+    border: 1px solid #e0e0e0; /* 添加边框 */
+    border-radius: 8px; /* 添加圆角 */
+    line-height: 1.7; /* 调整行高 */
+    position: relative;
     opacity: 0; /* 初始透明 */
     transform: translateY(20px); /* 从下方开始 */
-     /* 注意：这里的动画需要JavaScript来控制每个li的延迟 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 添加过渡效果 */
+    counter-increment: publication-counter; /* 为列表项创建计数器 */
 }
 
-#publications ul li:hover {
-     transform: none; /* 移除悬停动画 */
-     background-color: transparent; /* 移除悬停背景色 */
-}
-
-#publications a {
-    word-break: break-word; /* 长链接自动换行 */
+/* 学术成果列表项前的编号 */
+#publications ul li::before {
+    content: "[" counter(publication-counter) "] "; /* 使用计数器生成编号 */
+    font-weight: bold; /* 编号加粗 */
+    color: #34495e; /* 编号颜色 */
+    margin-right: 10px; /* 编号与文本的间距 */
 }
 
 /* 学术成果列表项进入视口后的动画效果（需要JavaScript来控制每个li的延迟） */
 section#publications.is-visible ul li {
     opacity: 1;
     transform: translateY(0);
+}
+
+#publications ul li:hover {
+     /* 学术成果列表项悬停时可以添加 subtle 效果 */
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+     background-color: #f9f9f9; /* 悬停时背景色轻微变化 */
+}
+
+
+#publications a {
+    word-break: break-word; /* 长链接自动换行 */
+    color: #3498db; /* 链接颜色 */
+    text-decoration: none; /* 移除下划线 */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+#publications a:hover {
+    color: #2980b9; /* 鼠标悬停时链接颜色变深 */
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
 }
 
 
@@ -280,29 +300,6 @@ nav a:hover {
     text-decoration: none;
     transform: translateY(-3px); /* 鼠标悬停时稍微上移 */
 }
-
-/* 可选：添加一个简单的导航栏样式 */
-/*
-nav {
-    margin-bottom: 30px;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 15px;
-}
-
-nav a {
-    margin: 0 15px;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #3498db;
-    text-decoration: none;
-}
-*/
 
 /* 可选：添加一个简单的图片进入动画示例 */
 /* 例如，如果你在HTML中添加了 <img src="..." class="profile-img"> */
