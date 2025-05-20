@@ -2,36 +2,36 @@
 
 /* Global Styles */
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Use a wider modern font stack */
-    line-height: 1.8; /* Increase line height for better readability */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Soft grey background */
-    color: #333; /* Dark grey text */
+    background-color: #f4f7f6;
+    color: #333;
     display: flex;
-    justify-content: center; /* Center content */
-    min-height: 100vh; /* Minimum height to fill viewport */
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Container Styles */
 .container {
-    width: 95%; /* Adjust width for small screens */
-    max-width: 960px; /* Increase max width for large screens */
-    margin: 40px auto; /* 40px top/bottom margin, auto left/right for centering */
-    padding: 30px; /* Increase padding */
-    background-color: #fff; /* White content background */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow effect */
-    border-radius: 12px; /* Increase border radius */
-    opacity: 0; /* Initial opacity for entrance animation */
-    animation: fadeInContainer 1.2s ease-out forwards; /* Apply a slower, more noticeable fade-in animation */
+    width: 95%;
+    max-width: 1024px; /* Slightly increased max-width for better content display */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    border-radius: 12px;
+    opacity: 0;
+    animation: fadeInContainer 1.2s ease-out forwards;
 }
 
 /* Container Fade-in Animation */
 @keyframes fadeInContainer {
     from {
         opacity: 0;
-        transform: translateY(40px); /* Start slightly below */
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -42,20 +42,19 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 50px; /* Increase bottom margin */
-    padding-bottom: 25px; /* Increase bottom padding */
-    border-bottom: 2px solid #e0e0e0; /* Light grey bottom border */
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 header h1 {
-    color: #2c3e50; /* Title color */
-    margin-bottom: 8px; /* Adjust bottom margin */
-    font-size: 3.2em; /* Title font size, slightly larger */
-    font-weight: 700; /* Bold title */
-    /* Entrance animation for header title */
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 3.2em;
+    font-weight: 700;
     opacity: 0;
     transform: translateY(-20px);
-    animation: slideInHeader 0.8s ease-out forwards 0.5s; /* Start with a delay */
+    animation: slideInHeader 0.8s ease-out forwards 0.5s;
 }
 
 @keyframes slideInHeader {
@@ -65,15 +64,13 @@ header h1 {
     }
 }
 
-
 header p {
-    color: #7f8c8d; /* Subtitle color */
-    font-size: 1.3em; /* Adjust font size */
-    font-weight: 300; /* Lighter font weight */
-     /* Entrance animation for header subtitle */
+    color: #7f8c8d;
+    font-size: 1.3em;
+    font-weight: 300;
     opacity: 0;
     transform: translateY(20px);
-    animation: slideInSubHeader 0.8s ease-out forwards 0.7s; /* Start with a delay */
+    animation: slideInSubHeader 0.8s ease-out forwards 0.7s;
 }
 
 @keyframes slideInSubHeader {
@@ -83,16 +80,15 @@ header p {
     }
 }
 
-
 /* Section Styles */
 section {
-    margin-bottom: 40px; /* Increase bottom margin */
-    padding-bottom: 30px; /* Increase bottom padding */
-    border-bottom: 1px dashed #dcdcdc; /* Dashed bottom border */
-    opacity: 0; /* Initial opacity for scroll animation */
-    transform: translateY(40px); /* Initial position for slide-in */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Add transition effect */
-    position: relative; /* For potential pseudo-elements or complex animations */
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #dcdcdc;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    position: relative;
 }
 
 /* Section visible in viewport animation (triggered by JavaScript) */
@@ -103,15 +99,15 @@ section.is-visible {
 
 /* Section Title Styles */
 section h2 {
-    color: #34495e; /* Section title color */
-    margin-bottom: 20px; /* Increase bottom margin */
-    border-left: 5px solid #3498db; /* Decorative left border */
-    padding-left: 15px; /* Increase left padding */
-    font-size: 1.9em; /* Adjust font size */
-    font-weight: 600; /* Bold */
-    opacity: 0; /* Initial opacity */
-    transform: translateX(-30px); /* Start from the left */
-    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s; /* Add transition and delay */
+    color: #34495e;
+    margin-bottom: 20px;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+    font-size: 2em; /* Slightly larger for prominence */
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
 }
 
 section.is-visible h2 {
@@ -119,66 +115,63 @@ section.is-visible h2 {
     transform: translateX(0);
 }
 
-
-/* List Styles (excluding publications) */
+/* List Styles for general sections (education, experience, projects, teaching_projects, courses, awards) */
 section:not(#publications) ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding: 0;
 }
 
 section:not(#publications) ul li {
-    background-color: #ecf0f1; /* List item background color */
-    margin-bottom: 12px; /* Increase bottom margin */
-    padding: 15px 20px; /* Increase padding */
-    border-radius: 8px; /* Add border radius */
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add more transition effects */
-    position: relative; /* For potential pseudo-elements or complex animations */
-    opacity: 0; /* Initial opacity */
-    transform: translateX(30px); /* Start from the right */
-     /* Note: Staggered animation for these list items requires JavaScript to control delay */
+    background-color: #ecf0f1;
+    margin-bottom: 12px;
+    padding: 18px 25px; /* Increased padding */
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px); /* Changed from translateX for a softer entrance */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
 }
 
 /* List items visible in viewport animation (excluding publications) */
 section:not(#publications).is-visible ul li {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
-
 
 /* List item hover effect (excluding publications) */
 section:not(#publications) ul li:hover {
-    transform: translateX(10px) scale(1.02); /* Slightly move right and scale up on hover */
-    background-color: #dce4e6; /* Darker background on hover */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* Add shadow effect */
+    transform: translateY(-5px) scale(1.01); /* Lift and slightly scale up on hover */
+    background-color: #dce4e6;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
-
 
 /* Link Styles */
 a {
-    color: #3498db; /* Link color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Add color and underline transition */
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
-    color: #2980b9; /* Darker link color on hover */
-    text-decoration: underline; /* Show underline on hover */
+    color: #2980b9;
+    text-decoration: underline;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    margin-top: 50px; /* Increase top margin */
-    padding-top: 25px; /* Increase top padding */
-    border-top: 1px solid #e0e0e0; /* Light grey top border */
-    color: #7f8c8d; /* Footer text color */
-    font-size: 1em; /* Adjust font size */
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+    color: #7f8c8d;
+    font-size: 1em;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        width: 98%; /* Wider on small screens */
+        width: 98%;
         margin: 20px auto;
         padding: 20px;
     }
@@ -189,8 +182,8 @@ footer {
 
     section h2 {
         font-size: 1.6em;
-        border-left-width: 4px; /* Reduce decorative line width */
-        padding-left: 10px; /* Reduce left padding */
+        border-left-width: 4px;
+        padding-left: 10px;
     }
 
     section ul li {
@@ -216,101 +209,108 @@ footer {
     }
 }
 
-
 /* Ensure the last section has no bottom border */
 section:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 20px; /* Adjust bottom margin */
+    margin-bottom: 20px;
 }
 
 /* Academic Publications List Styles */
 #publications ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding: 0;
-    counter-reset: publication-counter; /* Reset the counter for this list */
+    counter-reset: publication-counter;
 }
 
 #publications ul li {
-    background-color: #fff; /* White background for publication items */
-    margin-bottom: 20px; /* Increase bottom margin for separation */
-    padding: 15px 20px; /* Increase padding */
-    border: 1px solid #e0e0e0; /* Add border */
-    border-radius: 8px; /* Add border radius */
-    line-height: 1.7; /* Adjust line height */
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px 25px; /* Increased padding */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px; /* Slightly more rounded corners */
+    line-height: 1.7;
     position: relative;
-    opacity: 0; /* Initial opacity for animation */
-    transform: translateY(20px); /* Start from below */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Add transition */
-    display: flex; /* Use flexbox for layout control */
-    flex-direction: column; /* Stack elements vertically */
-    counter-increment: publication-counter; /* Increment the counter for each list item */
-    padding-left: 40px; /* Add padding to the left to make space for the number */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: grid; /* Use CSS Grid for better control over layout */
+    grid-template-columns: auto 1fr; /* Number column and content column */
+    gap: 10px 15px; /* Gap between rows and columns */
+    padding-left: 60px; /* More space for the number */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    align-items: start; /* Align content to the top */
 }
 
 /* Academic publication list item number */
 #publications ul li::before {
-    content: counter(publication-counter) ". "; /* Display the counter followed by a period and space */
-    font-weight: bold; /* Bold number */
-    color: #34495e; /* Number color */
-    position: absolute; /* Position the number absolutely */
-    left: 15px; /* Adjust left position */
-    top: 15px; /* Align with the top of the list item */
-    width: 20px; /* Give the number a fixed width for alignment */
-    text-align: right; /* Align number to the right */
+    content: counter(publication-counter) "."; /* Display the counter with a period */
+    counter-increment: publication-counter; /* Increment here */
+    font-weight: bold;
+    color: #3498db; /* Highlight number with primary color */
+    position: absolute; /* Position relative to li */
+    left: 25px; /* Position further left */
+    top: 20px; /* Align with top padding */
+    font-size: 1.2em; /* Larger font size for the number */
+    width: 25px; /* Fixed width for alignment */
+    text-align: right;
 }
-
 
 /* Styles for different parts of the publication entry */
 #publications ul li .authors {
-    font-weight: bold; /* Bold authors */
-    color: #555; /* Author color */
-    margin-bottom: 5px; /* Space below authors */
-    display: block; /* Make authors span a block element for better spacing */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    grid-column: 2 / 3; /* Place in the second column */
+    display: block;
 }
 
 #publications ul li .authors .self {
-    color: #3498db; /* Highlight your name */
-    font-weight: 700; /* Make your name bolder */
+    color: #3498db;
+    font-weight: 700;
 }
 
 #publications ul li .title {
-    font-style: italic; /* Italicize title */
-    color: #007bff; /* Title color */
-    margin-bottom: 5px; /* Space below title */
-    display: block; /* Make title span a block element */
+    font-style: italic;
+    color: #007bff;
+    margin-bottom: 5px;
+    grid-column: 2 / 3;
+    display: block;
+    font-size: 1.05em; /* Slightly larger title */
 }
 
 #publications ul li .publication-info {
-    color: #666; /* Color for publication info */
-    font-size: 0.95em; /* Slightly smaller font size */
-    margin-bottom: 5px; /* Space below publication info */
-    display: block; /* Make publication info span a block element */
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    grid-column: 2 / 3;
+    display: block;
 }
 
 #publications ul li .venue {
-    font-weight: 600; /* Bold venue */
-    color: #333; /* Venue color */
+    font-weight: 600;
+    color: #333;
 }
 
 #publications ul li .year {
-    color: #777; /* Color for year */
-    font-size: 0.9em; /* Smaller font size for year */
-    margin-left: 5px; /* Space after publication info */
+    color: #777;
+    font-size: 0.9em;
+    margin-left: 5px;
 }
 
 #publications ul li .doi {
-     color: #777; /* Color for DOI */
-     font-size: 0.9em; /* Smaller font size for DOI */
-     margin-top: 5px; /* Space above DOI */
-     display: block; /* Make DOI span a block element */
+     color: #777;
+     font-size: 0.9em;
+     margin-top: 5px;
+     grid-column: 2 / 3;
+     display: block;
 }
 
 #publications ul li .link {
-    margin-top: 5px; /* Space above link */
-    display: block; /* Make link span a block element */
+    margin-top: 5px;
+    grid-column: 2 / 3;
+    display: block;
 }
-
 
 /* Academic publication list item visible in viewport animation (requires JavaScript for staggered effect) */
 section#publications.is-visible ul li {
@@ -319,26 +319,23 @@ section#publications.is-visible ul li {
 }
 
 #publications ul li:hover {
-     /* Subtle hover effect for publication items */
-     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-     background-color: #f9f9f9; /* Slight background change on hover */
+     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow on hover */
+     background-color: #fcfcfc; /* Subtle background change on hover */
+     transform: translateY(-3px); /* Lift slightly on hover */
 }
 
-
 #publications a {
-    word-break: break-word; /* Break long links */
-    color: #3498db; /* Link color */
-    text-decoration: none; /* Remove underline */
+    word-break: break-word;
+    color: #3498db;
+    text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    font-size: 0.9em; /* Smaller font size for links */
-    /* Removed margin-top and display: inline-block here, using the .link span for layout */
+    font-size: 0.95em; /* Slightly larger link font size */
 }
 
 #publications a:hover {
-    color: #2980b9; /* Darker link color on hover */
-    text-decoration: underline; /* Show underline on hover */
+    color: #2980b9;
+    text-decoration: underline;
 }
-
 
 /* Navigation bar styles */
 nav {
@@ -353,27 +350,12 @@ nav a {
     font-size: 1.1em;
     font-weight: 500;
     color: #555;
-    transition: color 0.3s ease, transform 0.2s ease; /* Add transform transition */
-    display: inline-block; /* Make transform work */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #3498db;
     text-decoration: none;
-    transform: translateY(-3px); /* Slightly move up on hover */
+    transform: translateY(-3px);
 }
-
-/* Optional: Simple image entrance animation example */
-/* If you add <img src="..." class="profile-img"> in your HTML */
-/*
-.profile-img {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.profile-img.is-visible {
-    opacity: 1;
-    transform: scale(1);
-}
-*/
