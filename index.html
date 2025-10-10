@@ -115,7 +115,7 @@
       display: inline-block; padding: 8px 10px; margin: 2px 4px; border-radius: 10px;
       color: var(--text); text-decoration: none; white-space: nowrap;
     }
-    nav.primary a[aria-current="true"],
+    nav.primary a[aria-current="page"],
     nav.primary a:hover {
       background: var(--brand-weak); color: var(--brand);
     }
@@ -288,32 +288,31 @@
             <span class="title">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
             <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
             <span class="year">(2023).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener">10.14004/j.cnki.ckt.2023.0602</a>.</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener noreferrer">10.14004/j.cnki.ckt.2023.0602</a>.</span>
           </li>
           <li>
             <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
             <span class="title">语义值驱动的三维直立状态人体模型变形</span>
             <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
             <span class="year">(2019).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener noreferrer">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
           </li>
           <li>
             <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
             <span class="title">一种改进的快速迭代阈值选择算法</span>
             <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
             <span class="year">(2018).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener noreferrer">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
           </li>
           <li>
             <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
             <span class="title">梵高绘画风格特点的数字化分析</span>
             <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
             <span class="year">(2015).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener">10.16182/j.cnki.joss.2015.04.015</a>.</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener noreferrer">10.16182/j.cnki.joss.2015.04.015</a>.</span>
           </li>
         </ul>
       </section>
-
 
       <section id="courses" aria-labelledby="course-title">
         <h2 id="course-title">主要教授课程</h2>
@@ -359,14 +358,14 @@
   <script defer>
     document.addEventListener('DOMContentLoaded', function () {
       // 0) 计算粘性导航高度，写入 CSS 变量（窗口变化时更新）
-      const nav = document.querySelector('nav.primary');
+      const navEl = document.querySelector('nav.primary');
       const setStickyH = () => {
-        if (!nav) return;
-        const h = nav.getBoundingClientRect().height;
+        if (!navEl) return;
+        const h = navEl.getBoundingClientRect().height;
         document.documentElement.style.setProperty('--sticky-h', h + 'px');
       };
       setStickyH();
-      window.addEventListener('resize', setStickyH);
+      window.addEventListener('resize', setStickyH, { passive: true });
       
       // 1) Section 观察与显示动画
       const sections = document.querySelectorAll('main section');
@@ -383,16 +382,22 @@
       sections.forEach((s) => secObserver.observe(s));
 
       // 2) 导航当前章节高亮
-      const nav = document.querySelector('nav.primary');
-      const navLinks = nav.querySelectorAll('a[href^="#"]');
+      const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
       const idMap = [...navLinks].map(a => a.getAttribute('href'));
+      const markerY = 96; // 视口内用于判定当前区块的参考线
       const onScroll = () => {
         let currentId = idMap[0];
         sections.forEach(sec => {
           const rect = sec.getBoundingClientRect();
-          if (rect.top <= 96 && rect.bottom >= 96) currentId = '#' + sec.id;
+          if (rect.top <= markerY && rect.bottom >= markerY) currentId = '#' + sec.id;
         });
-        navLinks.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === currentId)));
+        navLinks.forEach(a => {
+          if (a.getAttribute('href') === currentId) {
+            a.setAttribute('aria-current', 'page');
+          } else {
+            a.removeAttribute('aria-current');
+          }
+        });
       };
       document.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
@@ -410,23 +415,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-    //   // 4) 锚点平滑滚动（补充：若浏览器不支持 CSS smooth）
-    //   const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
-    //   if (!supportsSmooth) {
-    //     navLinks.forEach(link => {
-    //       link.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         const targetId = this.getAttribute('href');
-    //         const el = document.querySelector(targetId);
-    //         if (el) el.scrollIntoView({ behavior: 'smooth' });
-    //       });
-    //     });
-    //   }
-    // });
-
       // 4) 统一拦截站内锚点，做“带偏移”的平滑滚动（避免被粘性导航遮住）
-      const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
-      
       const smoothGoto = (hash) => {
         const target = document.querySelector(hash);
         if (!target) return;
@@ -449,12 +438,12 @@
         });
       });
 
-// 直接访问带 hash 的 URL 时（或手动修改 hash）也应用带偏移滚动
-if (location.hash) {
-  setTimeout(() => smoothGoto(location.hash), 0);
-}
-window.addEventListener('hashchange', () => smoothGoto(location.hash));
-
+      // 直接访问带 hash 的 URL 时（或手动修改 hash）也应用带偏移滚动
+      if (location.hash) {
+        setTimeout(() => smoothGoto(location.hash), 0);
+      }
+      window.addEventListener('hashchange', () => smoothGoto(location.hash));
+    });
   </script>
 </body>
 </html>
