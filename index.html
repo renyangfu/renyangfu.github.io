@@ -1,220 +1,394 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>任洋甫 - 个人主页</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
-            const links = document.querySelectorAll('nav a[href^="#"]');
-            for (const link of links) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    document.querySelector(targetId).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            }
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>任洋甫 - 个人主页</title>
+  <meta name="description" content="任洋甫，青海大学计算机技术与应用系讲师。研究方向：虚拟现实、全景交互、视频图像处理。教育背景、教学经历、科研/教学项目、学术成果、课程与联系方式。" />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="任洋甫 - 个人主页" />
+  <meta property="og:description" content="青海大学计算机技术与应用系 讲师；研究方向：虚拟现实、全景交互、视频图像处理。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="theme-color" content="#0e7a9a" />
 
-            // Section Intersection Observer for animations
-            const sections = document.querySelectorAll('section');
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
+  <!-- 结构化数据（仅使用页面已给出的事实信息） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"任洋甫",
+    "jobTitle":"讲师",
+    "affiliation":{
+      "@type":"CollegeOrUniversity",
+      "name":"青海大学",
+      "department":"计算机技术与应用系"
+    },
+    "worksFor":{"@type":"CollegeOrUniversity","name":"青海大学"},
+    "email":["mailto:renyangfu@qhu.edu.cn","mailto:ryf21@mails.tsinghua.edu.cn"],
+    "alumniOf":[
+      {"@type":"CollegeOrUniversity","name":"清华大学"},
+      {"@type":"CollegeOrUniversity","name":"云南大学"},
+      {"@type":"CollegeOrUniversity","name":"西北师范大学"}
+    ],
+    "knowsAbout":["虚拟现实","全景交互","视频图像处理"]
+  }
+  </script>
 
-                        // Staggered animation for list items within the visible section
-                        const listItems = entry.target.querySelectorAll('ul li');
-                        listItems.forEach((item, index) => {
-                            item.style.transitionDelay = `${index * 0.1}s`;
-                            item.style.transitionDuration = '0.6s';
-                            item.style.transitionTimingFunction = 'ease-out';
-                            item.style.transitionProperty = 'opacity, transform';
-                        });
+  <style>
+    /* 基础与主题 */
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5b5b5b;
+      --brand: #0e7a9a;
+      --brand-weak: #e7f4f7;
+      --card: #ffffff;
+      --border: #e9eef1;
+      --shadow: 0 2px 14px rgba(10, 31, 68, 0.08);
+      --radius: 14px;
+      --content-max: 980px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0e10;
+        --text: #e9eef1;
+        --muted: #9fb0ba;
+        --brand: #4cc9f0;
+        --brand-weak: #0e2530;
+        --card: #11161b;
+        --border: #1b2630;
+        --shadow: 0 2px 14px rgba(0,0,0,.4);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 80% -20%, var(--brand-weak), transparent) no-repeat, var(--bg);
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--content-max); margin: 0 auto; padding: 24px; }
 
-                    } else {
-                        // Optional: Reset animation when element leaves viewport
-                        // entry.target.classList.remove('is-visible');
-                        // const listItems = entry.target.querySelectorAll('ul li');
-                        // listItems.forEach(item => {
-                        //     item.style.transitionDelay = '';
-                        //     item.style.opacity = 0;
-                        //     item.style.transform = 'translateY(20px)'; // Reset to initial state
-                        // });
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
+    /* 跳过导航 */
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px;
+      background: var(--brand); color: #fff; border-radius: 8px; z-index: 1000;
+    }
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+    /* 头部与名片区 */
+    header.site-header {
+      display: grid; grid-template-columns: auto 1fr; gap: 16px;
+      align-items: center; margin-block: 12px 20px;
+    }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), transparent);
+      display: inline-grid; place-items: center; color: #fff; box-shadow: var(--shadow);
+      user-select: none; font-weight: 700;
+    }
+    .title h1 { margin: 0; font-size: 28px; letter-spacing: .5px; }
+    .title p { margin: 6px 0 0; color: var(--muted); }
+
+    /* 导航 */
+    nav.primary {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.2) blur(8px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 10px; margin: 18px 0 26px;
+    }
+    nav.primary a {
+      display: inline-block; padding: 8px 10px; margin: 2px 4px; border-radius: 10px;
+      color: var(--text); text-decoration: none; white-space: nowrap;
+    }
+    nav.primary a[aria-current="true"],
+    nav.primary a:hover {
+      background: var(--brand-weak); color: var(--brand);
+    }
+
+    /* 区块与卡片 */
+    main section {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; margin: 18px 0; box-shadow: var(--shadow);
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .4s ease-out, transform .4s ease-out;
+    }
+    main section.is-visible { opacity: 1; transform: none; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    ul, ol { margin: 0; padding-left: 20px; }
+    li { margin: 6px 0; opacity: 0; transform: translateY(6px); transition:
+      opacity .6s ease-out, transform .6s ease-out; transition-delay: calc(var(--i, 0) * .08s); }
+    section.is-visible li { opacity: 1; transform: none; }
+
+    /* 细节与可读性 */
+    .publication-info, .year, .doi, .venue { white-space: nowrap; }
+    .self { text-decoration: underline dotted; text-underline-offset: 2px; }
+    .meta-note { color: var(--muted); font-size: .95em; }
+
+    /* 联系方式 */
+    address { font-style: normal; }
+
+    /* 页脚 */
+    footer {
+      text-align: center; color: var(--muted); padding: 24px 0 10px;
+    }
+
+    /* 回到顶部按钮 */
+    .to-top {
+      position: fixed; right: 18px; bottom: 18px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); border-radius: 999px;
+      padding: 10px 12px; box-shadow: var(--shadow); opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .to-top.show { opacity: 1; pointer-events: auto; }
+    .to-top:hover { background: var(--brand-weak); }
+
+    /* 减少动画偏好 */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>任洋甫</h1>
-            <p>青海大学计算机技术与应用系 讲师</p>
-        </header>
+  <a class="skip-link" href="#main">跳到主要内容</a>
 
-        <nav>
-            <a href="#bio">简介</a>
-            <a href="#education">教育背景</a>
-            <a href="#experience">教学工作</a>
-            <a href="#projects">科研项目</a>
-            <a href="#teaching_projects">教学项目</a>
-            <a href="#publications">学术成果</a>
-            <a href="#courses">教授课程</a>
-            <a href="#awards">个人业绩</a>
-            <a href="#contact">联系方式</a>
-        </nav>
+  <div class="container">
+    <header class="site-header" role="banner">
+      <!-- 可替换为真实头像 <img class="avatar" src="me.jpg" alt="任洋甫头像"> -->
+      <div class="avatar" aria-hidden="true">RYF</div>
+      <div class="title">
+        <h1>任洋甫</h1>
+        <p>青海大学计算机技术与应用系 讲师</p>
+      </div>
+    </header>
 
-        <section id="bio">
-            <h2>简介</h2>
-            <p>任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF会员、GDC会员。他的研究方向主要包括虚拟现实、全景交互和视频图像处理。</p>
-        </section>
+    <nav class="primary" role="navigation" aria-label="主导航">
+      <a href="#bio">简介</a>
+      <a href="#education">教育背景</a>
+      <a href="#experience">教学工作</a>
+      <a href="#projects">科研项目</a>
+      <a href="#teaching_projects">教学项目</a>
+      <a href="#publications">学术成果</a>
+      <a href="#courses">教授课程</a>
+      <a href="#awards">个人业绩</a>
+      <a href="#contact">联系方式</a>
+    </nav>
 
-        <section id="education">
-            <h2>教育背景</h2>
-            <ul>
-                <li><strong>2021年9月~至今：</strong>清华大学，计算机科学与技术系，博士学位候选人</li>
-                <li><strong>2012年9月~2015年7月：</strong>云南大学，信息学院，工学硕士学位</li>
-                <li><strong>2006年9月~2010年7月：</strong>西北师范大学，物理与电子工程学院，理学学士学位</li>
-            </ul>
-        </section>
+    <main id="main" role="main">
+      <section id="bio" aria-labelledby="bio-title">
+        <h2 id="bio-title">简介</h2>
+        <p>任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF会员、GDC会员。他的研究方向主要包括虚拟现实、全景交互和视频图像处理。</p>
+      </section>
 
-         <section id="experience">
-            <h2>教学工作经历</h2>
-            <ul>
-                <li><strong>2016年9月~至今：</strong>青海大学，计算机技术与应用系，讲师</li>
-            </ul>
-        </section>
+      <section id="education" aria-labelledby="edu-title">
+        <h2 id="edu-title">教育背景</h2>
+        <ul>
+          <li><strong>2021年9月~至今：</strong>清华大学，计算机科学与技术系，博士学位候选人</li>
+          <li><strong>2012年9月~2015年7月：</strong>云南大学，信息学院，工学硕士学位</li>
+          <li><strong>2006年9月~2010年7月：</strong>西北师范大学，物理与电子工程学院，理学学士学位</li>
+        </ul>
+      </section>
 
-        <section id="projects">
-            <h2>科研项目</h2>
-            <ul>
-                <li><strong>青海大学2019年中青年基金项目：</strong>“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；项目负责人。</li>
-                <li><strong>国家重点研发计划项目：</strong>“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。</li>
-                <li><strong>国家自然科学基金：</strong>“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。</li>
-                <li><strong>国家自然科学基金项目：</strong>“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
-            </ul>
-        </section>
+      <section id="experience" aria-labelledby="exp-title">
+        <h2 id="exp-title">教学工作经历</h2>
+        <ul>
+          <li><strong>2016年9月~至今：</strong>青海大学，计算机技术与应用系，讲师</li>
+        </ul>
+      </section>
 
-         <section id="teaching_projects">
-            <h2>教学项目</h2>
-            <ul>
-                <li><strong>2020年9月：</strong>《大学计算机》课程：国家级一流线上线下混合式课程</li>
-                <li><strong>2023年6月：</strong>《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目</li>
-                <li><strong>2020年6月：</strong>《计算机系统平台》课程：校级虚拟仿真实验教学建设项目</li>
-                <li><strong>2017年9月：</strong>《计算机系统平台》课程：校级精品课程</li>
-                <li><strong>2018年9月：</strong>《数据库应用基础》课程：校级一类课程建设项目</li>
-                <li><strong>2019年9月：</strong>《数据库应用基础》课程：2019年青海大学课程建设项目</li>
-            </ul>
-        </section>
+      <section id="projects" aria-labelledby="proj-title">
+        <h2 id="proj-title">科研项目</h2>
+        <ul>
+          <li><strong>青海大学2019年中青年基金项目：</strong>“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；项目负责人。</li>
+          <li><strong>国家重点研发计划项目：</strong>“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。</li>
+          <li><strong>国家自然科学基金：</strong>“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。</li>
+          <li><strong>国家自然科学基金项目：</strong>“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
+        </ul>
+      </section>
 
-       <section id="publications">
-            <h2>学术成果</h2>
-            <ul>
-                <li>
-                    <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
-                    <span class="title">虚拟现实重定向行走中的场景缩放增益研究</span>
-                    <span class="publication-info">[J/OL]. <span class="venue">图学学报</span>, 1-15</span>
-                    <span class="year">(2025).</span>
-                    <span class="link">[<a href="http://kns.cnki.net/kcms/detail/10.1034.T.20250306.1759.002.html">链接</a>]</span>
-                </li>
-                <li>
-                    <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
-                    <span class="title">虚拟现实中场景和时间对用户空间方向认知的影响</span>
-                    <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
-                    <span class="year">(2024).</span>
-                </li>
-                <li>
-                    <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
-                    <span class="title">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
-                    <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
-                    <span class="year">(2025).</span>
-                </li>
-                <li>
-                    <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
-                    <span class="title">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>
-                    <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
-                     <span class="year">(2024).</span>
-                </li>
-                <li>
-                    <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
-                    <span class="title">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
-                    <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
-                     <span class="year">(2024).</span>
-                </li>
-                <li>
-                    <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
-                    <span class="title">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
-                    <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
-                     <span class="year">(2023).</span>
-                    <span class="doi">DOI:10.14004/j.cnki.ckt.2023.0602.</span>
-                </li>
-                <li>
-                    <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
-                    <span class="title">语义值驱动的三维直立状态人体模型变形</span>
-                    <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
-                     <span class="year">(2019).</span>
-                    <span class="doi">DOI:10.16182/j.issn1004731x.joss.17DEA-007.</span>
-                </li>
-                <li>
-                    <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
-                    <span class="title">一种改进的快速迭代阈值选择算法</span>
-                    <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
-                    <span class="year">(2018).</span>
-                    <span class="doi">DOI:10.13901/j.cnki.qhwxxbzk.2018.03.006.</span>
-                </li>
-                <li>
-                    <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
-                    <span class="title">梵高绘画风格特点的数字化分析</span>
-                    <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
-                     <span class="year">(2015).</span>
-                    <span class="doi">DOI:10.16182/j.cnki.joss.2015.04.015.</span>
-                </li>
-            </ul>
-        </section>
+      <section id="teaching_projects" aria-labelledby="tproj-title">
+        <h2 id="tproj-title">教学项目</h2>
+        <ul>
+          <li><strong>2020年9月：</strong>《大学计算机》课程：国家级一流线上线下混合式课程</li>
+          <li><strong>2023年6月：</strong>《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目</li>
+          <li><strong>2020年6月：</strong>《计算机系统平台》课程：校级虚拟仿真实验教学建设项目</li>
+          <li><strong>2017年9月：</strong>《计算机系统平台》课程：校级精品课程</li>
+          <li><strong>2018年9月：</strong>《数据库应用基础》课程：校级一类课程建设项目</li>
+          <li><strong>2019年9月：</strong>《数据库应用基础》课程：2019年青海大学课程建设项目</li>
+        </ul>
+      </section>
 
-        <section id="courses">
-            <h2>主要教授课程</h2>
-            <ul>
-                <li>大学计算机</li>
-                <li>计算机系统平台</li>
-                <li>数据分析与处理技术</li>
-                <li>数据库应用基础</li>
-            </ul>
-        </section>
+      <section id="publications" aria-labelledby="pub-title">
+        <h2 id="pub-title">学术成果</h2>
+        <ul>
+          <li>
+            <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
+            <span class="title">虚拟现实重定向行走中的场景缩放增益研究</span>
+            <span class="publication-info">[J/OL]. <span class="venue">图学学报</span>, 1-15</span>
+            <span class="year">(2025).</span>
+            <span class="link">[<a href="http://kns.cnki.net/kcms/detail/10.1034.T.20250306.1759.002.html" target="_blank" rel="noopener">链接</a>]</span>
+          </li>
+          <li>
+            <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
+            <span class="title">虚拟现实中场景和时间对用户空间方向认知的影响</span>
+            <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
+            <span class="year">(2024).</span>
+          </li>
+          <li>
+            <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
+            <span class="title">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
+            <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
+            <span class="year">(2025).</span>
+          </li>
+          <li>
+            <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
+            <span class="title">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>
+            <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
+            <span class="year">(2024).</span>
+          </li>
+          <li>
+            <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
+            <span class="title">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
+            <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
+            <span class="year">(2024).</span>
+          </li>
+          <li>
+            <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
+            <span class="title">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
+            <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
+            <span class="year">(2023).</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener">10.14004/j.cnki.ckt.2023.0602</a>.</span>
+          </li>
+          <li>
+            <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
+            <span class="title">语义值驱动的三维直立状态人体模型变形</span>
+            <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
+            <span class="year">(2019).</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
+          </li>
+          <li>
+            <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
+            <span class="title">一种改进的快速迭代阈值选择算法</span>
+            <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
+            <span class="year">(2018).</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
+          </li>
+          <li>
+            <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
+            <span class="title">梵高绘画风格特点的数字化分析</span>
+            <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
+            <span class="year">(2015).</span>
+            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener">10.16182/j.cnki.joss.2015.04.015</a>.</span>
+          </li>
+        </ul>
+      </section>
 
-        <section id="awards">
-            <h2>个人业绩</h2>
-            <ul>
-                <li><strong>2019年：</strong>指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-                <li><strong>2020年：</strong>指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。</li>
-                <li><strong>2021年：</strong>指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-                <li><strong>2021年：</strong>获得青海大学本科生优秀毕业论文指导教师。</li>
-            </ul>
-        </section>
+      <section id="courses" aria-labelledby="course-title">
+        <h2 id="course-title">主要教授课程</h2>
+        <ul>
+          <li>大学计算机</li>
+          <li>计算机系统平台</li>
+          <li>数据分析与处理技术</li>
+          <li>数据库应用基础</li>
+        </ul>
+      </section>
 
-         <section id="contact">
-            <h2>联系方式</h2>
-            <p>
-                邮箱：
-                <a href="mailto:renyangfu@qhu.edu.cn">renyangfu@qhu.edu.cn</a> 或
-                <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
-            </p>
-        </section>
+      <section id="awards" aria-labelledby="awards-title">
+        <h2 id="awards-title">个人业绩</h2>
+        <ul>
+          <li><strong>2019年：</strong>指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
+          <li><strong>2020年：</strong>指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。</li>
+          <li><strong>2021年：</strong>指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
+          <li><strong>2021年：</strong>获得青海大学本科生优秀毕业论文指导教师。</li>
+        </ul>
+      </section>
 
-        <footer>
-            <p>&copy; 2025 任洋甫</p>
-        </footer>
-    </div>
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">联系方式</h2>
+        <address>
+          邮箱：
+          <a href="mailto:renyangfu@qhu.edu.cn">renyangfu@qhu.edu.cn</a> 或
+          <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
+        </address>
+        <p class="meta-note">如需纸质或英文简历，可邮件联系。</p>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2025 任洋甫</p>
+    </footer>
+  </div>
+
+  <a href="#top" class="to-top" id="toTopBtn" title="回到顶部" aria-label="回到顶部">↑</a>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1) Section 观察与显示动画
+      const sections = document.querySelectorAll('main section');
+      const secObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // 为列表项设置序号变量，实现交错延时
+            const items = entry.target.querySelectorAll('li');
+            items.forEach((li, idx) => li.style.setProperty('--i', idx));
+          }
+        });
+      }, { threshold: 0.12 });
+      sections.forEach((s) => secObserver.observe(s));
+
+      // 2) 导航当前章节高亮
+      const nav = document.querySelector('nav.primary');
+      const navLinks = nav.querySelectorAll('a[href^="#"]');
+      const idMap = [...navLinks].map(a => a.getAttribute('href'));
+      const onScroll = () => {
+        let currentId = idMap[0];
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 96 && rect.bottom >= 96) currentId = '#' + sec.id;
+        });
+        navLinks.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === currentId)));
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // 3) 回到顶部按钮
+      const toTop = document.getElementById('toTopBtn');
+      const toggleTop = () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        if (y > 600) toTop.classList.add('show'); else toTop.classList.remove('show');
+      };
+      toggleTop();
+      document.addEventListener('scroll', toggleTop, { passive: true });
+      toTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 4) 锚点平滑滚动（补充：若浏览器不支持 CSS smooth）
+      const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
+      if (!supportsSmooth) {
+        navLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const el = document.querySelector(targetId);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
