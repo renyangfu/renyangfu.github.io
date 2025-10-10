@@ -126,6 +126,8 @@
       padding: 20px; margin: 18px 0; box-shadow: var(--shadow);
       opacity: 0; transform: translateY(10px);
       transition: opacity .4s ease-out, transform .4s ease-out;
+
+      scroll-margin-top: calc(var(--sticky-h) + var(--sticky-gap));
     }
     main section.is-visible { opacity: 1; transform: none; }
     h2 { margin: 0 0 14px; font-size: 22px; }
