@@ -410,19 +410,51 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // 4) 锚点平滑滚动（补充：若浏览器不支持 CSS smooth）
-      const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
-      if (!supportsSmooth) {
-        navLinks.forEach(link => {
-          link.addEventListener('click', function (e) {
+    //   // 4) 锚点平滑滚动（补充：若浏览器不支持 CSS smooth）
+    //   const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
+    //   if (!supportsSmooth) {
+    //     navLinks.forEach(link => {
+    //       link.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         const targetId = this.getAttribute('href');
+    //         const el = document.querySelector(targetId);
+    //         if (el) el.scrollIntoView({ behavior: 'smooth' });
+    //       });
+    //     });
+    //   }
+    // });
+
+      // 4) 统一拦截站内锚点，做“带偏移”的平滑滚动（避免被粘性导航遮住）
+      const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
+      
+      const smoothGoto = (hash) => {
+        const target = document.querySelector(hash);
+        if (!target) return;
+        // 从 CSS 变量读取导航高度与预留间距
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-h')) || 0;
+        const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-gap')) || 0;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - navH - gap;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      };
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const el = document.querySelector(targetId);
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          });
+            smoothGoto(href);
+            // 更新地址栏 hash，便于刷新/分享
+            history.pushState(null, '', href);
+          }
         });
-      }
-    });
+      });
+
+// 直接访问带 hash 的 URL 时（或手动修改 hash）也应用带偏移滚动
+if (location.hash) {
+  setTimeout(() => smoothGoto(location.hash), 0);
+}
+window.addEventListener('hashchange', () => smoothGoto(location.hash));
+
   </script>
 </body>
 </html>
