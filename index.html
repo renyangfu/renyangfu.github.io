@@ -2,10 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>任洋甫 - 个人主页</title>
   <meta name="description" content="任洋甫，青海大学计算机技术与应用系讲师。研究方向：虚拟现实、全景交互、视频图像处理。教育背景、教学经历、科研/教学项目、学术成果、课程与联系方式。" />
   <meta name="color-scheme" content="light dark" />
@@ -13,9 +10,8 @@
   <meta property="og:title" content="任洋甫 - 个人主页" />
   <meta property="og:description" content="青海大学计算机技术与应用系 讲师；研究方向：虚拟现实、全景交互、视频图像处理。" />
   <meta property="og:locale" content="zh_CN" />
-  <meta name="theme-color" content="#0e7a9a" />
+  <meta name="theme-color" content="#0f3d56" />
 
-  <!-- 结构化数据（仅使用页面已给出的事实信息） -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -39,131 +35,565 @@
   </script>
 
   <style>
-    /* 基础与主题 */
     :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #5b5b5b;
-      --brand: #0e7a9a;
-      --brand-weak: #e7f4f7;
-      --card: #ffffff;
-      --border: #e9eef1;
-      --shadow: 0 2px 14px rgba(10, 31, 68, 0.08);
-      --radius: 14px;
-      --content-max: 980px;
-
-      /* 新增的两个变量，用于锚点偏移 */
-      --sticky-h: 64px;
-      --sticky-gap: 12px;
+      --bg: #f4f6f8;
+      --surface: rgba(255,255,255,.84);
+      --surface-strong: #ffffff;
+      --text: #18222d;
+      --muted: #667280;
+      --line: rgba(24, 34, 45, .10);
+      --line-strong: rgba(24, 34, 45, .18);
+      --brand: #1f3a5f;
+      --brand-2: #2e4f78;
+      --accent: #b28a52;
+      --accent-soft: rgba(178,138,82,.14);
+      --brand-soft: rgba(31,58,95,.08);
+      --shadow-lg: 0 24px 60px rgba(20, 36, 52, .10);
+      --shadow-md: 0 14px 34px rgba(20, 36, 52, .08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --content-max: 1180px;
+      --nav-h: 72px;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0b0e10;
-        --text: #e9eef1;
-        --muted: #9fb0ba;
-        --brand: #4cc9f0;
-        --brand-weak: #0e2530;
-        --card: #11161b;
-        --border: #1b2630;
-        --shadow: 0 2px 14px rgba(0,0,0,.4);
+        --bg: #0c1116;
+        --surface: rgba(18,24,31,.82);
+        --surface-strong: #12181f;
+        --text: #edf3f8;
+        --muted: #9fafbc;
+        --line: rgba(233,243,248,.10);
+        --line-strong: rgba(233,243,248,.14);
+        --brand: #9bb7d7;
+        --brand-2: #b3c7df;
+        --accent: #c6a06b;
+        --accent-soft: rgba(198,160,107,.16);
+        --brand-soft: rgba(155,183,215,.10);
+        --shadow-lg: 0 24px 60px rgba(0,0,0,.34);
+        --shadow-md: 0 14px 34px rgba(0,0,0,.24);
       }
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
       color: var(--text);
-      background: radial-gradient(1200px 600px at 80% -20%, var(--brand-weak), transparent) no-repeat, var(--bg);
+      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(900px 500px at 8% -10%, rgba(31,58,95,.14), transparent 60%),
+        radial-gradient(700px 420px at 100% 0%, rgba(178,138,82,.12), transparent 54%),
+        linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 18%),
+        var(--bg);
+      letter-spacing: .1px;
     }
-    a { color: var(--brand); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: var(--content-max); margin: 0 auto; padding: 24px; }
 
-    /* 跳过导航 */
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--content-max); margin: 0 auto; padding: 28px 24px 64px; }
+
     .skip-link {
       position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
     }
     .skip-link:focus {
       position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px;
-      background: var(--brand); color: #fff; border-radius: 8px; z-index: 1000;
+      background: var(--brand); color: #fff; border-radius: 10px; z-index: 999;
     }
 
-    /* 头部与名片区 */
-    header.site-header {
-      display: grid; grid-template-columns: auto 1fr; gap: 16px;
-      align-items: center; margin-block: 12px 20px;
+    .topbar {
+      position: sticky; top: 0; z-index: 80;
+      margin-bottom: 22px;
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
     }
-    .avatar {
-      width: 120px; height: 120px; border-radius: 50%;
-      object-fit: cover; /* 确保头像居中裁切不变形 */
-      background: linear-gradient(135deg, var(--brand), transparent);
-      display: inline-grid; place-items: center; color: #fff; box-shadow: var(--shadow);
-      user-select: none; font-weight: 700;
-    }
-    .title h1 { margin: 0; font-size: 28px; letter-spacing: .5px; }
-    .title p { margin: 6px 0 0; color: var(--muted); }
 
-    /* 导航 */
     nav.primary {
-      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.2) blur(8px);
-      background: color-mix(in srgb, var(--bg) 82%, transparent); border: 1px solid var(--border);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 10px; margin: 18px 0 26px;
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
     }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--brand));
+      box-shadow: 0 0 0 6px var(--accent-soft);
+      flex: 0 0 auto;
+    }
+
+    .brand-mini strong {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
     nav.primary a {
-      display: inline-block; padding: 8px 10px; margin: 2px 4px; border-radius: 10px;
-      color: var(--text); text-decoration: none; white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      transition: .2s ease;
     }
-    nav.primary a[aria-current="page"],
-    nav.primary a:hover {
-      background: var(--brand-weak); color: var(--brand);
+
+    nav.primary a:hover,
+    nav.primary a[aria-current="page"] {
+      color: var(--brand);
+      background: var(--brand-soft);
+      text-decoration: none;
     }
 
-    /* 区块与卡片 */
-    main section {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 20px; margin: 18px 0; box-shadow: var(--shadow);
-      opacity: 0; transform: translateY(10px);
-      transition: opacity .4s ease-out, transform .4s ease-out;
-
-      scroll-margin-top: calc(var(--sticky-h) + var(--sticky-gap));
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 42px;
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.46)),
+        linear-gradient(120deg, rgba(15,61,86,.05), rgba(184,138,68,.04));
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
     }
-    main section.is-visible { opacity: 1; transform: none; }
-    h2 { margin: 0 0 14px; font-size: 22px; }
-    ul, ol { margin: 0; padding-left: 20px; }
-    li { margin: 6px 0; opacity: 0; transform: translateY(6px); transition:
-      opacity .6s ease-out, transform .6s ease-out; transition-delay: calc(var(--i, 0) * .08s); }
-    section.is-visible li { opacity: 1; transform: none; }
 
-    /* 细节与可读性 */
-    .publication-info, .year, .doi, .venue { white-space: nowrap; }
-    .self { text-decoration: underline dotted; text-underline-offset: 2px; }
-    .meta-note { color: var(--muted); font-size: .95em; }
+    @media (prefers-color-scheme: dark) {
+      .hero {
+        background:
+          linear-gradient(135deg, rgba(18,24,31,.92), rgba(18,24,31,.78)),
+          linear-gradient(120deg, rgba(133,182,209,.08), rgba(210,169,106,.05));
+      }
+    }
 
-    /* 联系方式 */
-    address { font-style: normal; }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .hero::before {
+      width: 300px; height: 300px;
+      right: -80px; top: -120px;
+      background: radial-gradient(circle, rgba(15,61,86,.12), transparent 70%);
+    }
+    .hero::after {
+      width: 220px; height: 220px;
+      right: 80px; bottom: -120px;
+      background: radial-gradient(circle, rgba(184,138,68,.16), transparent 70%);
+    }
 
-    /* 页脚 */
+    .avatar-wrap {
+      position: relative;
+      width: 160px;
+      aspect-ratio: 1;
+      border-radius: 28px;
+      padding: 8px;
+      background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.5));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), var(--shadow-md);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .avatar-wrap {
+        background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      }
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, var(--brand), transparent);
+    }
+
+    .hero-text .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    .hero-text h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: .4px;
+      color: var(--brand);
+    }
+
+    .hero-text .subtitle {
+      margin: 12px 0 18px;
+      font-size: 18px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-text .intro {
+      max-width: 820px;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.52);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .meta-pill { background: rgba(255,255,255,.03); }
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: calc(var(--nav-h) + 18px);
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
+    }
+
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      color: var(--brand);
+      letter-spacing: .2px;
+    }
+
+    .side-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      transition: .2s ease;
+    }
+
+    .quick-links a:hover {
+      text-decoration: none;
+      border-color: var(--line-strong);
+      transform: translateY(-1px);
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    section.panel {
+      scroll-margin-top: 96px;
+      padding: 28px 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--brand);
+      letter-spacing: .3px;
+    }
+
+    .section-head .en {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      white-space: nowrap;
+    }
+
+    .prose {
+      color: var(--text);
+      font-size: 15.5px;
+    }
+
+    ul.clean-list,
+    .year-block ul,
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.clean-list li,
+    .year-block li,
+    .pub-list li {
+      position: relative;
+      margin: 0;
+      padding: 14px 0 14px 18px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    ul.clean-list li:last-child,
+    .year-block li:last-child,
+    .pub-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    ul.clean-list li::before,
+    .year-block li::before,
+    .pub-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--brand));
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: minmax(180px, 230px) 1fr;
+      gap: 18px;
+      padding-left: 0;
+    }
+
+    .timeline li::before { display: none; }
+
+    .timeline .when {
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+
+    .timeline .what {
+      color: var(--text);
+      min-width: 0;
+    }
+
+    .year-block {
+      margin-top: 26px;
+    }
+
+    .year-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 8px;
+      color: var(--brand);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .year-title::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .authors, .publication-info, .year, .doi, .venue { display: inline; }
+    .title-inline {
+      font-weight: 700;
+      color: var(--text);
+    }
+    .self {
+      text-decoration: underline;
+      text-decoration-color: rgba(184,138,68,.55);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+    .doi a { word-break: break-all; }
+
+    .badge-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .soft-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+      color: var(--text);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    address {
+      font-style: normal;
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 14px 14px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     footer {
-      text-align: center; color: var(--muted); padding: 24px 0 10px;
+      padding-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    /* 回到顶部按钮 */
     .to-top {
-      position: fixed; right: 18px; bottom: 18px; border: 1px solid var(--border);
-      background: var(--card); color: var(--text); border-radius: 999px;
-      padding: 10px 12px; box-shadow: var(--shadow); opacity: 0; pointer-events: none;
-      transition: opacity .3s ease;
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--brand);
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s ease;
+      backdrop-filter: blur(12px);
     }
-    .to-top.show { opacity: 1; pointer-events: auto; }
-    .to-top:hover { background: var(--brand-weak); }
+    .to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-    /* 减少动画偏好 */
+    @media (max-width: 1080px) {
+      .layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+    }
+
+    @media (max-width: 840px) {
+      .container { padding: 18px 16px 48px; }
+      nav.primary {
+        display: block;
+        padding: 14px;
+      }
+      .brand-mini { margin-bottom: 10px; }
+      .nav-links { justify-content: flex-start; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        gap: 20px;
+      }
+      .avatar-wrap { width: 120px; }
+      .timeline li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      section.panel { padding: 22px 20px; }
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-text h1 { font-size: 32px; }
+      .hero-text .subtitle { font-size: 16px; }
+      .meta-pill { font-size: 13px; }
+      nav.primary a { padding: 8px 11px; font-size: 13px; }
+      .section-head h2 { font-size: 21px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      * { transition: none !important; }
     }
   </style>
 </head>
@@ -171,312 +601,361 @@
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <div class="container">
-    <header class="site-header" role="banner">
-      <!-- 可替换为真实头像 <img class="avatar" src="me.jpg" alt="任洋甫头像"> -->
-      <img class="avatar" src="me.png" alt="任洋甫头像" width="120" height="120">
-      <div class="title">
+    <div class="topbar">
+      <nav class="primary" role="navigation" aria-label="主导航">
+        <div class="brand-mini">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <strong>Academic Homepage</strong>
+        </div>
+        <div class="nav-links">
+          <a href="#bio">简介</a>
+          <a href="#education">教育背景</a>
+          <a href="#experience">教学工作</a>
+          <a href="#projects">科研项目</a>
+          <a href="#teaching_projects">教学项目</a>
+          <a href="#publications">学术成果</a>
+          <a href="#courses">教授课程</a>
+          <a href="#awards">个人业绩</a>
+          <a href="#contact">联系方式</a>
+        </div>
+      </nav>
+    </div>
+
+    <header class="hero" role="banner">
+      <div class="avatar-wrap">
+        <img class="avatar" src="me.png" alt="任洋甫头像" width="160" height="160" />
+      </div>
+      <div class="hero-text">
+        <div class="eyebrow">Academic Homepage</div>
         <h1>任洋甫</h1>
-        <p>青海大学计算机技术与应用系 讲师</p>
+        <p class="subtitle">青海大学计算机技术与应用系 讲师</p>
+        <p class="intro">任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。</p>
+        <div class="hero-meta">
+          <span class="meta-pill">研究方向：虚拟现实与交互</span>
+          <span class="meta-pill">研究方向：计算机图形学</span>
+          <span class="meta-pill">Academic Profile</span>
+        </div>
       </div>
     </header>
 
-    <nav class="primary" role="navigation" aria-label="主导航">
-      <a href="#bio">简介</a>
-      <a href="#education">教育背景</a>
-      <a href="#experience">教学工作</a>
-      <a href="#projects">科研项目</a>
-      <a href="#teaching_projects">教学项目</a>
-      <a href="#publications">学术成果</a>
-      <a href="#courses">教授课程</a>
-      <a href="#awards">个人业绩</a>
-      <a href="#contact">联系方式</a>
-    </nav>
+    <div class="layout">
+      <aside class="side-panel" aria-label="侧边信息">
+        <h2>页面导览</h2>
+        <p>在不改变原始内容的前提下，采用更克制的视觉语言、更加清晰的信息分层，以及更符合个人学术主页的版式结构。</p>
+        <div class="quick-links">
+          <a href="#publications">查看学术成果</a>
+          <a href="#projects">查看科研项目</a>
+          <a href="#courses">查看教授课程</a>
+          <a href="#contact">联系邮箱</a>
+        </div>
+      </aside>
 
-    <main id="main" role="main">
-      <section id="bio" aria-labelledby="bio-title">
-        <h2 id="bio-title">简介</h2>
-        <p>任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。</p>
-      </section>
+      <main id="main" class="content-stack" role="main">
+        <section id="bio" class="panel" aria-labelledby="bio-title">
+          <div class="section-head">
+            <h2 id="bio-title">简介</h2>
+            <span class="en">Profile</span>
+          </div>
+          <div class="prose">
+            任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。
+          </div>
+        </section>
 
-      <section id="education" aria-labelledby="edu-title">
-        <h2 id="edu-title">教育背景</h2>
-        <ul>
-          <li><strong>2021年9月~至今：</strong>清华大学，计算机科学与技术系，博士学位候选人，博士导师：张松海教授</li>
-          <li><strong>2012年9月~2015年7月：</strong>云南大学，信息学院，工学硕士学位，硕士导师：普园媛教授</li>
-          <li><strong>2006年9月~2010年7月：</strong>西北师范大学，物理与电子工程学院，理学学士学位</li>
-        </ul>
-      </section>
+        <section id="education" class="panel" aria-labelledby="edu-title">
+          <div class="section-head">
+            <h2 id="edu-title">教育背景</h2>
+            <span class="en">Education</span>
+          </div>
+          <ul class="clean-list timeline">
+            <li><div class="when">2021年9月~至今</div><div class="what">清华大学，计算机科学与技术系，博士学位候选人，博士导师：张松海教授</div></li>
+            <li><div class="when">2012年9月~2015年7月</div><div class="what">云南大学，信息学院，工学硕士学位，硕士导师：普园媛教授</div></li>
+            <li><div class="when">2006年9月~2010年7月</div><div class="what">西北师范大学，物理与电子工程学院，理学学士学位</div></li>
+          </ul>
+        </section>
 
-      <section id="experience" aria-labelledby="exp-title">
-        <h2 id="exp-title">教学工作经历</h2>
-        <ul>
-          <li><strong>2016年9月~至今：</strong>青海大学，计算机技术与应用系，讲师</li>
-        </ul>
-      </section>
+        <section id="experience" class="panel" aria-labelledby="exp-title">
+          <div class="section-head">
+            <h2 id="exp-title">教学工作经历</h2>
+            <span class="en">Experience</span>
+          </div>
+          <ul class="clean-list timeline">
+            <li><div class="when">2016年9月~至今</div><div class="what">青海大学，计算机技术与应用系，讲师</div></li>
+          </ul>
+        </section>
 
-      <section id="projects" aria-labelledby="proj-title">
-        <h2 id="proj-title">科研项目</h2>
-        <ul>
-          <li><strong>北航虚拟现实技术与系统全国重点实验室2026开放课题：</strong>“面向重定向行走的场景布局影响机制与自适应控制方法研究”；主持。</li>
-          <li><strong>青海大学2019年中青年基金项目：</strong>“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；主持。</li>
-          <li><strong>国家重点研发计划项目：</strong>“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。</li>
-          <li><strong>国家自然科学基金：</strong>“藏毯图像生成及颜色编辑关键技术研究”；2026.01-2029.12；参与。</li>
-          <li><strong>国家自然科学基金：</strong>“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。</li>
-          <li><strong>国家自然科学基金项目：</strong>“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
-        </ul>
-      </section>
+        <section id="projects" class="panel" aria-labelledby="proj-title">
+          <div class="section-head">
+            <h2 id="proj-title">科研项目</h2>
+            <span class="en">Research Projects</span>
+          </div>
+          <ul class="clean-list">
+            <li><strong>北航虚拟现实技术与系统全国重点实验室2026开放课题：</strong>“面向重定向行走的场景布局影响机制与自适应控制方法研究”；主持。</li>
+            <li><strong>青海大学2019年中青年基金项目：</strong>“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；主持。</li>
+            <li><strong>国家重点研发计划项目：</strong>“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。</li>
+            <li><strong>国家自然科学基金：</strong>“藏毯图像生成及颜色编辑关键技术研究”；2026.01-2029.12；参与。</li>
+            <li><strong>国家自然科学基金：</strong>“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。</li>
+            <li><strong>国家自然科学基金项目：</strong>“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
+          </ul>
+        </section>
 
-      <section id="teaching_projects" aria-labelledby="tproj-title">
-        <h2 id="tproj-title">教学项目</h2>
-        <ul>
-          <li><strong>2020年9月：</strong>《大学计算机》课程：国家级一流线上线下混合式课程</li>
-          <li><strong>2024年1月：</strong>《大学计算机》课程：青海省省级一流线上线下混合式课程</li>
-           <li><strong>2026年4月：</strong>《面向新工科的《虚拟现实技术与应用》课程系统重构与实践研究》：校级教学研究项目</li>
-          <li><strong>2023年6月：</strong>《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目</li>
-          <li><strong>2020年6月：</strong>《计算机系统平台》课程：校级虚拟仿真实验教学建设项目</li>
-          <li><strong>2017年9月：</strong>《计算机系统平台》课程：校级精品课程</li>
-          <li><strong>2018年9月：</strong>《数据库应用基础》课程：校级一类课程建设项目</li>
-          <li><strong>2019年9月：</strong>《数据库应用基础》课程：2019年青海大学课程建设项目</li>
-        </ul>
-      </section>
+        <section id="teaching_projects" class="panel" aria-labelledby="tproj-title">
+          <div class="section-head">
+            <h2 id="tproj-title">教学项目</h2>
+            <span class="en">Teaching Projects</span>
+          </div>
+          <ul class="clean-list">
+            <li><strong>2020年9月：</strong>《大学计算机》课程：国家级一流线上线下混合式课程</li>
+            <li><strong>2024年1月：</strong>《大学计算机》课程：青海省省级一流线上线下混合式课程</li>
+            <li><strong>2026年4月：</strong>《面向新工科的《虚拟现实技术与应用》课程系统重构与实践研究》：校级教学研究项目</li>
+            <li><strong>2023年6月：</strong>《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目</li>
+            <li><strong>2020年6月：</strong>《计算机系统平台》课程：校级虚拟仿真实验教学建设项目</li>
+            <li><strong>2017年9月：</strong>《计算机系统平台》课程：校级精品课程</li>
+            <li><strong>2018年9月：</strong>《数据库应用基础》课程：校级一类课程建设项目</li>
+            <li><strong>2019年9月：</strong>《数据库应用基础》课程：2019年青海大学课程建设项目</li>
+          </ul>
+        </section>
 
-       <section id="publications" aria-labelledby="pub-title">
-        <h2 id="pub-title">学术成果</h2>
-      
-        <h3>2025</h3>
-        <ul>
-          <li>
-            <span class="authors">Xin Du, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Qi-Wen Gan, and Song-Hai Zhang.</span>
-            <span class="title">Perceiving Safety: User Preferences and Perception of Multimodal Virtual Boundary Cues in VR</span>.
-            <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025 CCF-C <strong style="color: red;">Best Poster Award</strong>).</span>
-            <span class="year">(2025).</span>
-          </li>
-          <li>
-            <span class="authors">Hong-Ru Ji, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Fang-Lue Zhang, and Song-Hai Zhang.</span>
-            <span class="title">The Effects of Head Pitch on Translation Gain in Virtual Reality Environments</span>.
-            <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025, CCF-C).</span>
-            <span class="year">(2025).</span>
-          </li>
-          <li>
-            <span class="authors">冀红茹, 任洋甫*, 胥森哲, 张松海.</span>
-            <span class="title">虚拟现实中速度驱动场景缩放对行走与查找效率提升的研究</span>
-            <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025,1-18.</span>
-            <span class="year">(2025).</span>
-          </li>
-          <li>
-            <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
-            <span class="title">虚拟现实重定向行走中的场景缩放增益研究</span>
-            <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2025, 46(04): 793-806.</span>
-            <span class="year">(2025).</span>
-          </li>
-          <li>
-            <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
-            <span class="title">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
-            <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
-            <span class="year">(2025).</span>
-          </li>
-        </ul>
-      
-        <h3>2024</h3>
-        <ul>
-          <li>
-            <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
-            <span class="title">虚拟现实中场景和时间对用户空间方向认知的影响</span>
-            <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
-            <span class="year">(2024).</span>
-          </li>
-          <li>
-            <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
-            <span class="title">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
-            <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
-            <span class="year">(2024).</span>
-            <span class="doi">DOI:CNKI:SUN:ZGTB.0.2024-01-001.</span>
-          </li>
-          <li>
-            <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
-            <span class="title">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>
-            <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
-            <span class="year">(2024).</span>
-          </li>
-        </ul>
-      
-        <h3>2023</h3>
-        <ul>
-          <li>
-            <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
-            <span class="title">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
-            <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
-            <span class="year">(2023).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener noreferrer">10.14004/j.cnki.ckt.2023.0602</a>.</span>
-          </li>
-        </ul>
-      
-        <h3>2019</h3>
-        <ul>
-          <li>
-            <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
-            <span class="title">语义值驱动的三维直立状态人体模型变形</span>
-            <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
-            <span class="year">(2019).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener noreferrer">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
-          </li>
-        </ul>
-      
-        <h3>2018</h3>
-        <ul>
-          <li>
-            <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
-            <span class="title">一种改进的快速迭代阈值选择算法</span>
-            <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
-            <span class="year">(2018).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener noreferrer">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
-          </li>
-        </ul>
-      
-        <h3>2015</h3>
-        <ul>
-          <li>
-            <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
-            <span class="title">梵高绘画风格特点的数字化分析</span>
-            <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
-            <span class="year">(2015).</span>
-            <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener noreferrer">10.16182/j.cnki.joss.2015.04.015</a>.</span>
-          </li>
-        </ul>
-      </section>
-      
-      <section id="courses" aria-labelledby="course-title">
-        <h2 id="course-title">主要教授课程</h2>
-        <ul>
-          <li>虚拟现实技术与应用（2026春季）</li>
-          <li>人工智能通识（2025秋季）</li>
-          <li>可视媒体计算与艺术表现（2025秋季）</li>
-          <li>大学计算机</li>
-          <li>计算机系统平台</li>
-          <li>数据分析与处理技术</li>
-          <li>数据库应用基础</li>
-        </ul>
-      </section>
+        <section id="publications" class="panel" aria-labelledby="pub-title">
+          <div class="section-head">
+            <h2 id="pub-title">学术成果</h2>
+            <span class="en">Publications</span>
+          </div>
 
-      <section id="awards" aria-labelledby="awards-title">
-        <h2 id="awards-title">个人业绩</h2>
-        <ul>
-          <li><strong>2019年：</strong>指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-          <li><strong>2020年：</strong>指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。</li>
-          <li><strong>2021年：</strong>指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-          <li><strong>2021年：</strong>获得青海大学本科生优秀毕业论文指导教师。</li>
-          <li><strong>2022年：</strong>参与指导学生获2022年中国大学生计算机设计大赛三等奖。</li>
-          <li><strong>2024年：</strong>指导学生获得全国大学生虚拟现实创新设计竞赛国赛二等奖。</li>
-          <li><strong>2025年：</strong>参与指导学生获2025年中国大学生计算机设计大赛西北赛区三等奖。</li>
-        </ul>
-      </section>
+          <div class="year-block">
+            <h3 class="year-title">2025</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors">Xin Du, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Qi-Wen Gan, and Song-Hai Zhang.</span>
+                <span class="title-inline">Perceiving Safety: User Preferences and Perception of Multimodal Virtual Boundary Cues in VR</span>.
+                <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025 CCF-C <strong style="color: #a05a2c;">Best Poster Award</strong>).</span>
+                <span class="year">(2025).</span>
+              </li>
+              <li>
+                <span class="authors">Hong-Ru Ji, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Fang-Lue Zhang, and Song-Hai Zhang.</span>
+                <span class="title-inline">The Effects of Head Pitch on Translation Gain in Virtual Reality Environments</span>.
+                <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025, CCF-C).</span>
+                <span class="year">(2025).</span>
+              </li>
+              <li>
+                <span class="authors">冀红茹, 任洋甫*, 胥森哲, 张松海.</span>
+                <span class="title-inline">虚拟现实中速度驱动场景缩放对行走与查找效率提升的研究</span>
+                <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025,1-18.</span>
+                <span class="year">(2025).</span>
+              </li>
+              <li>
+                <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
+                <span class="title-inline">虚拟现实重定向行走中的场景缩放增益研究</span>
+                <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2025, 46(04): 793-806.</span>
+                <span class="year">(2025).</span>
+              </li>
+              <li>
+                <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
+                <span class="title-inline">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
+                <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
+                <span class="year">(2025).</span>
+              </li>
+            </ul>
+          </div>
 
-      <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">联系方式</h2>
-        <address>
-          邮箱：
-          <a href="mailto:renyangfu@qhu.edu.cn">renyangfu@qhu.edu.cn</a> 或
-          <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
-        </address>
-        <p class="meta-note">请对课题组研究方向有兴趣的同学，请附个人简历和自我介绍发送邮件联系我。</p>
-      </section>
-    </main>
+          <div class="year-block">
+            <h3 class="year-title">2024</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
+                <span class="title-inline">虚拟现实中场景和时间对用户空间方向认知的影响</span>
+                <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
+                <span class="year">(2024).</span>
+              </li>
+              <li>
+                <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
+                <span class="title-inline">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
+                <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
+                <span class="year">(2024).</span>
+                <span class="doi">DOI:CNKI:SUN:ZGTB.0.2024-01-001.</span>
+              </li>
+              <li>
+                <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
+                <span class="title-inline">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>.
+                <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
+                <span class="year">(2024).</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-block">
+            <h3 class="year-title">2023</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
+                <span class="title-inline">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
+                <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
+                <span class="year">(2023).</span>
+                <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener noreferrer">10.14004/j.cnki.ckt.2023.0602</a>.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-block">
+            <h3 class="year-title">2019</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
+                <span class="title-inline">语义值驱动的三维直立状态人体模型变形</span>
+                <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
+                <span class="year">(2019).</span>
+                <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener noreferrer">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-block">
+            <h3 class="year-title">2018</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
+                <span class="title-inline">一种改进的快速迭代阈值选择算法</span>
+                <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
+                <span class="year">(2018).</span>
+                <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener noreferrer">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-block">
+            <h3 class="year-title">2015</h3>
+            <ul class="pub-list">
+              <li>
+                <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
+                <span class="title-inline">梵高绘画风格特点的数字化分析</span>
+                <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
+                <span class="year">(2015).</span>
+                <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener noreferrer">10.16182/j.cnki.joss.2015.04.015</a>.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="courses" class="panel" aria-labelledby="course-title">
+          <div class="section-head">
+            <h2 id="course-title">主要教授课程</h2>
+            <span class="en">Courses</span>
+          </div>
+          <div class="badge-line" aria-hidden="true">
+            <span class="soft-badge">虚拟现实技术与应用（2026春季）</span>
+            <span class="soft-badge">人工智能通识（2025秋季）</span>
+            <span class="soft-badge">可视媒体计算与艺术表现（2025秋季）</span>
+          </div>
+          <ul class="clean-list" style="margin-top: 10px;">
+            <li>虚拟现实技术与应用（2026春季）</li>
+            <li>人工智能通识（2025秋季）</li>
+            <li>可视媒体计算与艺术表现（2025秋季）</li>
+            <li>大学计算机</li>
+            <li>计算机系统平台</li>
+            <li>数据分析与处理技术</li>
+            <li>数据库应用基础</li>
+          </ul>
+        </section>
+
+        <section id="awards" class="panel" aria-labelledby="awards-title">
+          <div class="section-head">
+            <h2 id="awards-title">个人业绩</h2>
+            <span class="en">Awards & Honors</span>
+          </div>
+          <ul class="clean-list">
+            <li><strong>2019年：</strong>指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
+            <li><strong>2020年：</strong>指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。</li>
+            <li><strong>2021年：</strong>指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
+            <li><strong>2021年：</strong>获得青海大学本科生优秀毕业论文指导教师。</li>
+            <li><strong>2022年：</strong>参与指导学生获2022年中国大学生计算机设计大赛三等奖。</li>
+            <li><strong>2024年：</strong>指导学生获得全国大学生虚拟现实创新设计竞赛国赛二等奖。</li>
+            <li><strong>2025年：</strong>参与指导学生获2025年中国大学生计算机设计大赛西北赛区三等奖。</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="panel" aria-labelledby="contact-title">
+          <div class="section-head">
+            <h2 id="contact-title">联系方式</h2>
+            <span class="en">Contact</span>
+          </div>
+          <address>
+            邮箱：
+            <a href="mailto:renyangfu@qhu.edu.cn">renyangfu@qhu.edu.cn</a>
+            或
+            <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
+          </address>
+          <div class="contact-note">请对课题组研究方向有兴趣的同学，请附个人简历和自我介绍发送邮件联系我。</div>
+        </section>
+      </main>
+    </div>
 
     <footer role="contentinfo">
       <p>&copy; 2025 任洋甫</p>
     </footer>
   </div>
 
-  <a href="#top" class="to-top" id="toTopBtn" title="回到顶部" aria-label="回到顶部">↑</a>
+  <a href="#top" class="to-top" id="toTopBtn" aria-label="回到顶部">↑</a>
 
-  <script defer>
-    document.addEventListener('DOMContentLoaded', function () {
-      // 0) 计算粘性导航高度，写入 CSS 变量（窗口变化时更新）
-      const navEl = document.querySelector('nav.primary');
-      const setStickyH = () => {
-        if (!navEl) return;
-        const h = navEl.getBoundingClientRect().height;
-        document.documentElement.style.setProperty('--sticky-h', h + 'px');
-      };
-      setStickyH();
-      window.addEventListener('resize', setStickyH, { passive: true });
-      
-      // 1) Section 观察与显示动画
-      const sections = document.querySelectorAll('main section');
-      const secObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            // 为列表项设置序号变量，实现交错延时
-            const items = entry.target.querySelectorAll('li');
-            items.forEach((li, idx) => li.style.setProperty('--i', idx));
-          }
-        });
-      }, { threshold: 0.12 });
-      sections.forEach((s) => secObserver.observe(s));
-
-      // 2) 导航当前章节高亮
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
       const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
-      const idMap = [...navLinks].map(a => a.getAttribute('href'));
-      const markerY = 96; // 视口内用于判定当前区块的参考线
-      const onScroll = () => {
-        let currentId = idMap[0];
-        sections.forEach(sec => {
-          const rect = sec.getBoundingClientRect();
-          if (rect.top <= markerY && rect.bottom >= markerY) currentId = '#' + sec.id;
+      const sections = document.querySelectorAll('main section[id]');
+      const toTop = document.getElementById('toTopBtn');
+
+      const setActive = () => {
+        let current = '';
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            current = '#' + section.id;
+          }
         });
-        navLinks.forEach(a => {
-          if (a.getAttribute('href') === currentId) {
-            a.setAttribute('aria-current', 'page');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === current) {
+            link.setAttribute('aria-current', 'page');
           } else {
-            a.removeAttribute('aria-current');
+            link.removeAttribute('aria-current');
           }
         });
       };
-      document.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
 
-      // 3) 回到顶部按钮
-      const toTop = document.getElementById('toTopBtn');
       const toggleTop = () => {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        if (y > 600) toTop.classList.add('show'); else toTop.classList.remove('show');
+        if (window.scrollY > 520) toTop.classList.add('show');
+        else toTop.classList.remove('show');
       };
-      toggleTop();
-      document.addEventListener('scroll', toggleTop, { passive: true });
-      toTop.addEventListener('click', (e) => {
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          const id = link.getAttribute('href');
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - 88;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          history.pushState(null, '', id);
+        });
+      });
+
+      toTop.addEventListener('click', e => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // 4) 统一拦截站内锚点，做“带偏移”的平滑滚动（避免被粘性导航遮住）
-      const smoothGoto = (hash) => {
-        const target = document.querySelector(hash);
-        if (!target) return;
-        // 从 CSS 变量读取导航高度与预留间距
-        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-h')) || 0;
-        const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-gap')) || 0;
-        const y = target.getBoundingClientRect().top + window.pageYOffset - navH - gap;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      };
-      
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href') || '';
-          if (href.startsWith('#')) {
-            e.preventDefault();
-            smoothGoto(href);
-            // 更新地址栏 hash，便于刷新/分享
-            history.pushState(null, '', href);
-          }
-        });
-      });
+      setActive();
+      toggleTop();
+      document.addEventListener('scroll', () => {
+        setActive();
+        toggleTop();
+      }, { passive: true });
 
-      // 直接访问带 hash 的 URL 时（或手动修改 hash）也应用带偏移滚动
       if (location.hash) {
-        setTimeout(() => smoothGoto(location.hash), 0);
+        const target = document.querySelector(location.hash);
+        if (target) {
+          setTimeout(() => {
+            const y = target.getBoundingClientRect().top + window.pageYOffset - 88;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }, 60);
+        }
       }
-      window.addEventListener('hashchange', () => smoothGoto(location.hash));
     });
   </script>
 </body>
