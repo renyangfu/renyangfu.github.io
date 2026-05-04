@@ -495,60 +495,104 @@
     }
   
 
-    /* 标题行优化：校徽 + 导航均匀铺开 */
+    /* 标题行优化：长条形校名校徽 + 9 个导航项均匀铺开 */
     nav.primary {
-      grid-template-columns: auto minmax(0, 1fr);
-      column-gap: 24px;
+      grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+      column-gap: 18px;
       align-items: center;
+      padding: 10px 14px;
+      min-height: 82px;
     }
     .brand-mini {
       gap: 0;
-      min-width: auto;
-      max-width: none;
+      min-width: 0;
+      max-width: 240px;
+      width: 100%;
       flex: 0 0 auto;
+    }
+    .brand-logo-shell {
+      width: 100%;
+      height: 58px;
+      padding: 6px 10px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 10px;
     }
     .nav-links {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(9, minmax(0, 1fr));
-      gap: 8px;
+      gap: 6px;
       justify-content: stretch;
       align-items: center;
     }
     .nav-link {
       justify-content: center;
       text-align: center;
-      min-height: 38px;
-      padding-inline: 8px;
+      min-height: 36px;
+      padding: 8px 6px;
+      border-radius: 999px;
       white-space: nowrap;
+      font-size: 12.8px;
+      line-height: 1;
+      letter-spacing: -.1px;
     }
 
-    @media (max-width: 1080px) {
-      .nav-links {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+    @media (max-width: 1180px) {
+      nav.primary {
+        grid-template-columns: minmax(160px, 210px) minmax(0, 1fr);
+        column-gap: 14px;
       }
+      .brand-mini { max-width: 210px; }
+      .brand-logo-shell { height: 52px; }
+      .nav-links { gap: 5px; }
+      .nav-link { font-size: 12.2px; padding-inline: 5px; }
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 980px) {
       nav.primary {
         grid-template-columns: 1fr;
         row-gap: 12px;
+        min-height: auto;
       }
       .brand-mini {
+        max-width: 260px;
         justify-content: flex-start;
       }
+      .brand-logo-shell {
+        height: 56px;
+      }
       .nav-links {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 7px;
+      }
+      .nav-link {
+        font-size: 13px;
+        min-height: 36px;
       }
     }
 
     @media (max-width: 560px) {
+      .brand-mini { max-width: 230px; }
+      .brand-logo-shell {
+        height: 50px;
+        padding: 5px 8px;
+        border-radius: 16px;
+      }
       .nav-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
       }
       .nav-link {
-        min-height: 36px;
+        min-height: 34px;
         font-size: 12.5px;
+        padding-inline: 6px;
       }
     }
   </style>
@@ -561,7 +605,7 @@
     <div class="topbar">
       <nav class="primary" role="navigation" aria-label="主导航">
         <div class="brand-mini">
-          <span class="brand-logo-shell"><img class="brand-logo" src="QHU.jpg" alt="青海大学校徽" /></span>
+          <span class="brand-logo-shell"><img class="brand-logo" src="QHU.png" alt="青海大学校名校徽" /></span>
         </div>
         <div class="nav-links" id="topNav"></div>
       </nav>
@@ -606,7 +650,7 @@
         role: "讲师",
         affiliation: "青海大学 · 计算机技术与应用系",
         avatar: "me.png",
-        universityLogo: "QHU.jpg",
+        universityLogo: "QHU.png",
         institute: { name: "青海大学可视媒体计算研究所", url: "https://qhucvm.github.io/" },
         intro: "任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员、中国电子学会会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。",
         researchFocus: ["虚拟现实与交互", "计算机图形学"],
