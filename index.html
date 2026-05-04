@@ -10,7 +10,7 @@
   <meta property="og:title" content="任洋甫 - 个人主页" />
   <meta property="og:description" content="青海大学计算机技术与应用系 讲师；研究方向：虚拟现实、全景交互、视频图像处理。" />
   <meta property="og:locale" content="zh_CN" />
-  <meta name="theme-color" content="#0f3d56" />
+  <meta name="theme-color" content="#102f46" />
 
   <script type="application/ld+json">
   {
@@ -18,11 +18,7 @@
     "@type":"Person",
     "name":"任洋甫",
     "jobTitle":"讲师",
-    "affiliation":{
-      "@type":"CollegeOrUniversity",
-      "name":"青海大学",
-      "department":"计算机技术与应用系"
-    },
+    "affiliation":{"@type":"CollegeOrUniversity","name":"青海大学","department":"计算机技术与应用系"},
     "worksFor":{"@type":"CollegeOrUniversity","name":"青海大学"},
     "email":["mailto:renyangfu@qhu.edu.cn","mailto:ryf21@mails.tsinghua.edu.cn"],
     "alumniOf":[
@@ -36,43 +32,50 @@
 
   <style>
     :root {
-      --bg: #f4f6f8;
-      --surface: rgba(255,255,255,.84);
-      --surface-strong: #ffffff;
-      --text: #18222d;
-      --muted: #667280;
-      --line: rgba(24, 34, 45, .10);
-      --line-strong: rgba(24, 34, 45, .18);
-      --brand: #1f3a5f;
-      --brand-2: #2e4f78;
-      --accent: #b28a52;
-      --accent-soft: rgba(178,138,82,.14);
-      --brand-soft: rgba(31,58,95,.08);
-      --shadow-lg: 0 24px 60px rgba(20, 36, 52, .10);
-      --shadow-md: 0 14px 34px rgba(20, 36, 52, .08);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --content-max: 1180px;
+      --bg: #f6f8fb;
+      --bg-2: #eef3f7;
+      --card: rgba(255, 255, 255, .88);
+      --card-strong: #ffffff;
+      --ink: #15212c;
+      --muted: #647180;
+      --muted-2: #8a96a5;
+      --line: rgba(21, 33, 44, .10);
+      --line-strong: rgba(21, 33, 44, .18);
+      --navy: #102f46;
+      --blue: #235b80;
+      --cyan: #2989a6;
+      --gold: #a9793d;
+      --navy-soft: rgba(16, 47, 70, .08);
+      --cyan-soft: rgba(41, 137, 166, .12);
+      --gold-soft: rgba(169, 121, 61, .14);
+      --shadow: 0 24px 70px rgba(16, 47, 70, .10);
+      --shadow-card: 0 14px 36px rgba(16, 47, 70, .08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --content-max: 1220px;
       --nav-h: 72px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0c1116;
-        --surface: rgba(18,24,31,.82);
-        --surface-strong: #12181f;
-        --text: #edf3f8;
-        --muted: #9fafbc;
-        --line: rgba(233,243,248,.10);
-        --line-strong: rgba(233,243,248,.14);
-        --brand: #9bb7d7;
-        --brand-2: #b3c7df;
-        --accent: #c6a06b;
-        --accent-soft: rgba(198,160,107,.16);
-        --brand-soft: rgba(155,183,215,.10);
-        --shadow-lg: 0 24px 60px rgba(0,0,0,.34);
-        --shadow-md: 0 14px 34px rgba(0,0,0,.24);
+        --bg: #090f15;
+        --bg-2: #0d141b;
+        --card: rgba(17, 25, 33, .88);
+        --card-strong: #111922;
+        --ink: #edf3f8;
+        --muted: #a8b4c1;
+        --muted-2: #8492a0;
+        --line: rgba(237, 243, 248, .10);
+        --line-strong: rgba(237, 243, 248, .18);
+        --navy: #a8c9df;
+        --blue: #91bdd9;
+        --cyan: #75c8dc;
+        --gold: #d0a96f;
+        --navy-soft: rgba(168, 201, 223, .10);
+        --cyan-soft: rgba(117, 200, 220, .13);
+        --gold-soft: rgba(208, 169, 111, .15);
+        --shadow: 0 28px 80px rgba(0, 0, 0, .38);
+        --shadow-card: 0 16px 42px rgba(0, 0, 0, .30);
       }
     }
 
@@ -80,842 +83,611 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      color: var(--text);
-      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      font: 16px/1.75 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       background:
-        radial-gradient(900px 500px at 8% -10%, rgba(31,58,95,.14), transparent 60%),
-        radial-gradient(700px 420px at 100% 0%, rgba(178,138,82,.12), transparent 54%),
-        linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 18%),
-        var(--bg);
+        linear-gradient(rgba(16,47,70,.046) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,47,70,.046) 1px, transparent 1px),
+        radial-gradient(780px 440px at 10% -8%, rgba(41,137,166,.15), transparent 62%),
+        radial-gradient(760px 460px at 96% 2%, rgba(169,121,61,.13), transparent 58%),
+        linear-gradient(180deg, #f9fbfd 0%, var(--bg) 42%, var(--bg-2) 100%);
+      background-size: 36px 36px, 36px 36px, auto, auto, auto;
       letter-spacing: .1px;
     }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          linear-gradient(rgba(237,243,248,.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(237,243,248,.035) 1px, transparent 1px),
+          radial-gradient(780px 440px at 10% -8%, rgba(117,200,220,.12), transparent 62%),
+          radial-gradient(760px 460px at 96% 2%, rgba(208,169,111,.10), transparent 58%),
+          linear-gradient(180deg, #080d12 0%, var(--bg) 42%, var(--bg-2) 100%);
+        background-size: 36px 36px, 36px 36px, auto, auto, auto;
+      }
+    }
 
-    a { color: var(--brand); text-decoration: none; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
     img { max-width: 100%; display: block; }
-    .container { max-width: var(--content-max); margin: 0 auto; padding: 28px 24px 64px; }
+    .skip-link { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; left: 16px; top: 16px; z-index: 999; width: auto; height: auto; padding: 8px 12px; border-radius: 10px; background: var(--navy); color: #fff; }
 
-    .skip-link {
-      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-    }
-    .skip-link:focus {
-      position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px;
-      background: var(--brand); color: #fff; border-radius: 10px; z-index: 999;
-    }
+    .scroll-progress { position: fixed; left: 0; top: 0; z-index: 200; width: 100%; height: 3px; transform-origin: left center; transform: scaleX(0); background: linear-gradient(90deg, var(--cyan), var(--gold)); box-shadow: 0 0 18px rgba(41,137,166,.35); }
+    .page-shell { width: min(var(--content-max), calc(100% - 40px)); margin: 0 auto; padding: 22px 0 64px; }
+    .topbar { position: sticky; top: 12px; z-index: 90; margin-bottom: 26px; backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); }
+    nav.primary { min-height: var(--nav-h); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 18px; padding: 12px 14px 12px 18px; border: 1px solid var(--line); border-radius: 21px; background: var(--card); box-shadow: var(--shadow-card); }
+    .brand-mini { display: inline-flex; align-items: center; gap: 12px; min-width: 0; color: var(--navy); }
+    .brand-mark { position: relative; width: 34px; height: 34px; display: inline-grid; place-items: center; border: 1px solid var(--line-strong); border-radius: 12px; background: linear-gradient(145deg, var(--navy-soft), var(--cyan-soft)); flex: 0 0 auto; overflow: hidden; }
+    .brand-mark::before, .brand-mark::after { content: ""; position: absolute; border-radius: 999px; background: var(--cyan); }
+    .brand-mark::before { width: 7px; height: 7px; left: 8px; top: 8px; }
+    .brand-mark::after { width: 5px; height: 5px; right: 8px; bottom: 8px; background: var(--gold); }
+    .brand-mini strong { display: block; font-size: 14px; line-height: 1.2; letter-spacing: .35px; white-space: nowrap; }
+    .brand-mini span:last-child { display: block; color: var(--muted-2); font-size: 11px; letter-spacing: 1.15px; text-transform: uppercase; white-space: nowrap; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+    .nav-link { display: inline-flex; align-items: center; padding: 8px 11px; border-radius: 999px; color: var(--muted); font-size: 13.5px; line-height: 1; transition: transform .18s ease, background .18s ease, color .18s ease; }
+    .nav-link:hover, .nav-link[aria-current="page"] { color: var(--navy); background: var(--navy-soft); text-decoration: none; transform: translateY(-1px); }
 
-    .topbar {
-      position: sticky; top: 0; z-index: 80;
-      margin-bottom: 22px;
-      backdrop-filter: blur(18px) saturate(140%);
-      -webkit-backdrop-filter: blur(18px) saturate(140%);
-    }
+    .hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(300px, 390px) minmax(0, 1fr); gap: 20px; margin-bottom: 24px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-xl); background: linear-gradient(135deg, rgba(255,255,255,.70), rgba(255,255,255,.42)), linear-gradient(120deg, rgba(41,137,166,.08), rgba(169,121,61,.06)); box-shadow: var(--shadow); isolation: isolate; }
+    @media (prefers-color-scheme: dark) { .hero { background: linear-gradient(135deg, rgba(17,25,33,.88), rgba(17,25,33,.70)), linear-gradient(120deg, rgba(117,200,220,.08), rgba(208,169,111,.06)); } }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, transparent 0 72%, rgba(41,137,166,.12) 72% 73%, transparent 73%), linear-gradient(0deg, transparent 0 76%, rgba(169,121,61,.11) 76% 77%, transparent 77%); background-size: 54px 54px; mask-image: radial-gradient(circle at 78% 34%, black, transparent 64%); }
+    .hero::after { content: ""; position: absolute; right: -100px; top: -128px; z-index: -1; width: 360px; height: 360px; border-radius: 999px; background: radial-gradient(circle, rgba(41,137,166,.18), transparent 68%); }
+    .identity-card { position: relative; display: grid; align-content: space-between; min-height: 430px; padding: 28px; border: 1px solid var(--line); border-radius: 25px; background: var(--card); box-shadow: inset 0 1px 0 rgba(255,255,255,.42); }
+    .avatar-wrap { width: 142px; aspect-ratio: 1; margin-bottom: 24px; padding: 7px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,255,255,.30)), linear-gradient(135deg, var(--cyan-soft), var(--gold-soft)); box-shadow: var(--shadow-card); }
+    @media (prefers-color-scheme: dark) { .avatar-wrap { background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02)), linear-gradient(135deg, var(--cyan-soft), var(--gold-soft)); } }
+    .avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(135deg, var(--navy-soft), var(--cyan-soft)); }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--blue); font-size: 13px; font-weight: 750; letter-spacing: 1.3px; text-transform: uppercase; }
+    .hero-kicker::before { content: ""; width: 30px; height: 1px; background: linear-gradient(90deg, var(--cyan), var(--gold)); }
+    .identity-card h1 { margin: 0; color: var(--navy); font-size: clamp(40px, 5vw, 58px); line-height: 1.04; letter-spacing: .5px; }
+    .identity-card .subtitle { margin: 12px 0 0; color: var(--ink); font-size: 17px; font-weight: 750; line-height: 1.6; }
+    .identity-footer { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; line-height: 1.8; }
+    .hero-main { display: grid; gap: 14px; align-content: center; padding: 8px 10px 8px 0; }
+    .intro-card, .research-chip, .summary-card { border: 1px solid var(--line); background: var(--card); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .intro-card { padding: 26px 28px; border-radius: 24px; }
+    .intro-card:hover, .research-chip:hover, .summary-card:hover { transform: translateY(-2px); border-color: var(--line-strong); box-shadow: var(--shadow-card); }
+    .intro-card .intro { max-width: 780px; margin: 0; color: var(--ink); font-size: 16px; line-height: 1.9; }
+    .research-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .research-chip { position: relative; overflow: hidden; min-height: 96px; padding: 16px; border-radius: 18px; }
+    .research-chip::after { content: ""; position: absolute; right: -22px; bottom: -26px; width: 72px; height: 72px; border: 1px solid var(--line-strong); border-radius: 22px; transform: rotate(18deg); opacity: .55; transition: transform .25s ease; }
+    .research-chip:hover::after { transform: rotate(32deg) scale(1.04); }
+    .research-chip span { display: block; color: var(--muted-2); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    .research-chip strong { display: block; margin-top: 8px; color: var(--navy); font-size: 15px; line-height: 1.45; }
+    .summary-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 12px; }
+    .summary-card { position: relative; overflow: hidden; padding: 18px; border-radius: 18px; }
+    .summary-card h2 { margin: 0 0 8px; color: var(--navy); font-size: 15px; letter-spacing: .2px; }
+    .summary-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
 
-    nav.primary {
-      min-height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 12px 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-    }
+    .layout { display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .side-panel { position: sticky; top: calc(var(--nav-h) + 36px); display: grid; gap: 14px; }
+    .side-card { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); box-shadow: var(--shadow-card); overflow: hidden; }
+    .side-profile { padding: 20px; }
+    .side-profile .name { margin: 0; color: var(--navy); font-size: 20px; line-height: 1.25; letter-spacing: .25px; }
+    .side-profile .role { margin: 8px 0 0; color: var(--ink); font-size: 14px; font-weight: 700; line-height: 1.65; }
+    .side-profile .affiliation { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .keyword-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .keyword { display: inline-flex; align-items: center; padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; background: linear-gradient(135deg, var(--navy-soft), var(--cyan-soft)); color: var(--navy); font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .side-section { padding: 16px 14px 14px; }
+    .side-title { display: flex; align-items: center; justify-content: space-between; margin: 0 0 10px; padding: 0 6px; color: var(--muted-2); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; letter-spacing: 1.1px; text-transform: uppercase; }
+    .side-nav { display: grid; gap: 6px; }
+    .side-nav a { position: relative; display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 8px; padding: 9px 10px; border: 1px solid transparent; border-radius: 13px; color: var(--muted); font-size: 14px; transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease; }
+    .side-nav a span:first-child { display: inline-grid; place-items: center; width: 26px; height: 22px; border-radius: 999px; background: var(--navy-soft); color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 11px; font-weight: 800; }
+    .side-nav a:hover, .side-nav a[aria-current="page"] { color: var(--navy); background: var(--card-strong); border-color: var(--line); text-decoration: none; transform: translateX(2px); }
+    .year-index { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 6px; }
+    .year-index a { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--card-strong); color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; font-weight: 750; transition: transform .18s ease, color .18s ease, border-color .18s ease; }
+    .year-index a:hover { color: var(--navy); border-color: var(--line-strong); text-decoration: none; transform: translateY(-1px); }
+    .email-actions { display: grid; gap: 8px; padding: 0 6px; }
+    .email-actions a, .copy-email { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 13px; background: var(--card-strong); color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+    .email-actions a:hover, .copy-email:hover { transform: translateY(-1px); border-color: var(--line-strong); background: linear-gradient(135deg, var(--navy-soft), var(--gold-soft)); text-decoration: none; }
 
-    .brand-mini {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--brand));
-      box-shadow: 0 0 0 6px var(--accent-soft);
-      flex: 0 0 auto;
-    }
-
-    .brand-mini strong {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .4px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 6px;
-    }
-
-    nav.primary a {
-      display: inline-flex;
-      align-items: center;
-      padding: 9px 13px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 14px;
-      transition: .2s ease;
-    }
-
-    nav.primary a:hover,
-    nav.primary a[aria-current="page"] {
-      color: var(--brand);
-      background: var(--brand-soft);
-      text-decoration: none;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 30px;
-      align-items: center;
-      padding: 42px;
-      margin-bottom: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.46)),
-        linear-gradient(120deg, rgba(15,61,86,.05), rgba(184,138,68,.04));
-      box-shadow: var(--shadow-lg);
-      isolation: isolate;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .hero {
-        background:
-          linear-gradient(135deg, rgba(18,24,31,.92), rgba(18,24,31,.78)),
-          linear-gradient(120deg, rgba(133,182,209,.08), rgba(210,169,106,.05));
-      }
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .hero::before {
-      width: 300px; height: 300px;
-      right: -80px; top: -120px;
-      background: radial-gradient(circle, rgba(15,61,86,.12), transparent 70%);
-    }
-    .hero::after {
-      width: 220px; height: 220px;
-      right: 80px; bottom: -120px;
-      background: radial-gradient(circle, rgba(184,138,68,.16), transparent 70%);
-    }
-
-    .avatar-wrap {
-      position: relative;
-      width: 160px;
-      aspect-ratio: 1;
-      border-radius: 28px;
-      padding: 8px;
-      background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.5));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), var(--shadow-md);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .avatar-wrap {
-        background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      }
-    }
-
-    .avatar {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, var(--brand), transparent);
-    }
-
-    .hero-text .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--brand);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .3px;
-    }
-
-    .hero-text h1 {
-      margin: 0;
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1.08;
-      letter-spacing: .4px;
-      color: var(--brand);
-    }
-
-    .hero-text .subtitle {
-      margin: 12px 0 18px;
-      font-size: 18px;
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .hero-text .intro {
-      max-width: 820px;
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 15.5px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .meta-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.52);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .meta-pill { background: rgba(255,255,255,.03); }
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 24px;
-      align-items: start;
-    }
-
-    .side-panel {
-      position: sticky;
-      top: calc(var(--nav-h) + 18px);
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-    }
-
-    .side-panel h2 {
-      margin: 0 0 12px;
-      font-size: 16px;
-      color: var(--brand);
-      letter-spacing: .2px;
-    }
-
-    .side-panel p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .quick-links {
-      margin-top: 18px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .quick-links a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--text);
-      border: 1px solid var(--line);
-      background: var(--surface-strong);
-      transition: .2s ease;
-    }
-
-    .quick-links a:hover {
-      text-decoration: none;
-      border-color: var(--line-strong);
-      transform: translateY(-1px);
-    }
-
-    .content-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    section.panel {
-      scroll-margin-top: 96px;
-      padding: 28px 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-    }
-
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 16px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: 24px;
-      color: var(--brand);
-      letter-spacing: .3px;
-    }
-
-    .section-head .en {
-      color: var(--muted);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      white-space: nowrap;
-    }
-
-    .prose {
-      color: var(--text);
-      font-size: 15.5px;
-    }
-
-    ul.clean-list,
-    .year-block ul,
-    .pub-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul.clean-list li,
-    .year-block li,
-    .pub-list li {
-      position: relative;
-      margin: 0;
-      padding: 14px 0 14px 18px;
-      border-bottom: 1px dashed var(--line);
-    }
-
-    ul.clean-list li:last-child,
-    .year-block li:last-child,
-    .pub-list li:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    ul.clean-list li::before,
-    .year-block li::before,
-    .pub-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 25px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--brand));
-      box-shadow: 0 0 0 5px var(--accent-soft);
-    }
-
-    .timeline li {
-      display: grid;
-      grid-template-columns: minmax(180px, 230px) 1fr;
-      gap: 18px;
-      padding-left: 0;
-    }
-
+    .content-stack { display: grid; gap: 18px; }
+    section.panel { position: relative; overflow: hidden; scroll-margin-top: 104px; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); box-shadow: var(--shadow-card); opacity: 0; transform: translateY(18px); transition: opacity .45s ease, transform .45s ease, border-color .22s ease; }
+    section.panel.is-visible { opacity: 1; transform: translateY(0); }
+    section.panel:hover { border-color: var(--line-strong); }
+    section.panel::before { content: attr(data-index); position: absolute; right: 26px; top: 20px; color: rgba(100,113,128,.20); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 44px; font-weight: 800; line-height: 1; pointer-events: none; }
+    .section-head { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 16px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .section-head h2 { margin: 0; color: var(--navy); font-size: 24px; line-height: 1.25; letter-spacing: .3px; }
+    .section-head .en { color: var(--muted-2); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
+    .prose { color: var(--ink); font-size: 15.5px; line-height: 1.95; }
+    ul.clean-list, .pub-list { list-style: none; margin: 0; padding: 0; }
+    ul.clean-list li, .pub-list li { position: relative; margin: 0; padding: 14px 0 14px 22px; border-bottom: 1px dashed var(--line); transition: background .18s ease, padding-left .18s ease; }
+    ul.clean-list li:hover, .pub-list li:hover { padding-left: 26px; background: linear-gradient(90deg, var(--navy-soft), transparent 70%); }
+    ul.clean-list li:last-child, .pub-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    ul.clean-list li::before, .pub-list li::before { content: ""; position: absolute; left: 0; top: 25px; width: 8px; height: 8px; border-radius: 999px; background: linear-gradient(135deg, var(--cyan), var(--gold)); box-shadow: 0 0 0 5px var(--cyan-soft); }
+    .timeline li { display: grid; grid-template-columns: minmax(180px, 230px) 1fr; gap: 18px; padding-left: 0; }
+    .timeline li:hover { padding-left: 0; }
     .timeline li::before { display: none; }
-
-    .timeline .when {
-      color: var(--brand);
-      font-weight: 700;
-      letter-spacing: .2px;
-      white-space: nowrap;
-    }
-
-    .timeline .what {
-      color: var(--text);
-      min-width: 0;
-    }
-
-    .year-block {
-      margin-top: 26px;
-    }
-
-    .year-title {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 8px;
-      color: var(--brand);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: .3px;
-    }
-
-    .year-title::before {
-      content: "";
-      width: 26px;
-      height: 1px;
-      background: var(--line-strong);
-    }
-
+    .timeline .when { position: relative; padding-left: 18px; color: var(--blue); font-weight: 800; letter-spacing: .2px; white-space: nowrap; }
+    .timeline .when::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 8px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 5px var(--gold-soft); }
+    .timeline .what { min-width: 0; color: var(--ink); }
+    .year-block { position: relative; margin-top: 28px; padding-left: 18px; border-left: 1px solid var(--line); scroll-margin-top: 104px; }
+    .year-block:first-of-type { margin-top: 4px; }
+    .year-title { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 8px -18px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card-strong); color: var(--navy); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 17px; font-weight: 800; letter-spacing: .4px; }
     .authors, .publication-info, .year, .doi, .venue { display: inline; }
-    .title-inline {
-      font-weight: 700;
-      color: var(--text);
-    }
-    .self {
-      text-decoration: underline;
-      text-decoration-color: rgba(184,138,68,.55);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-    }
+    .title-inline { font-weight: 800; color: var(--ink); }
+    .self { text-decoration: underline; text-decoration-color: rgba(169,121,61,.72); text-decoration-thickness: 2px; text-underline-offset: 3px; }
     .doi a { word-break: break-all; }
+    .badge-line { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2px; margin-bottom: 10px; }
+    .soft-badge { display: inline-flex; align-items: center; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: linear-gradient(135deg, var(--navy-soft), var(--gold-soft)); color: var(--ink); font-size: 13px; white-space: nowrap; transition: transform .18s ease, border-color .18s ease; }
+    .soft-badge:hover { transform: translateY(-1px); border-color: var(--line-strong); }
+    address { color: var(--ink); font-style: normal; line-height: 1.9; }
+    .contact-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--card-strong); }
+    .contact-note { margin-top: 14px; padding: 14px 16px; border-left: 3px solid var(--gold); border-radius: 0 14px 14px 0; background: var(--gold-soft); color: var(--muted); font-size: 14px; }
+    footer { padding-top: 26px; text-align: center; color: var(--muted); font-size: 14px; }
+    .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 70; width: 46px; height: 46px; display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--navy); box-shadow: var(--shadow-card); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .to-top.show { opacity: 1; pointer-events: auto; }
+    .to-top:hover { transform: translateY(-2px); text-decoration: none; }
+    .toast { position: fixed; left: 50%; bottom: 26px; z-index: 120; transform: translate(-50%, 18px); padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); box-shadow: var(--shadow-card); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; font-size: 13px; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-    .badge-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 2px;
-    }
-
-    .soft-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--accent-soft);
-      color: var(--text);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    address {
-      font-style: normal;
-      color: var(--text);
-      line-height: 1.9;
-    }
-
-    .contact-note {
-      margin-top: 12px;
-      padding: 14px 16px;
-      border-left: 3px solid var(--accent);
-      background: var(--accent-soft);
-      border-radius: 0 14px 14px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer {
-      padding-top: 22px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .to-top {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 46px;
-      height: 46px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--brand);
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      pointer-events: none;
-      transition: .2s ease;
-      backdrop-filter: blur(12px);
-    }
-    .to-top.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    @media (max-width: 1080px) {
+    @media (max-width: 1120px) {
+      .hero { grid-template-columns: 1fr; }
+      .identity-card { min-height: auto; grid-template-columns: auto 1fr; align-items: center; gap: 22px; }
+      .identity-footer { grid-column: 1 / -1; }
+      .avatar-wrap { margin-bottom: 0; }
+      .hero-main { padding: 0 4px 8px; }
       .layout { grid-template-columns: 1fr; }
       .side-panel { position: static; }
+      .side-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
-
     @media (max-width: 840px) {
-      .container { padding: 18px 16px 48px; }
-      nav.primary {
-        display: block;
-        padding: 14px;
-      }
-      .brand-mini { margin-bottom: 10px; }
+      .page-shell { width: min(100% - 28px, var(--content-max)); padding-top: 14px; }
+      .topbar { top: 8px; }
+      nav.primary { grid-template-columns: 1fr; gap: 12px; }
       .nav-links { justify-content: flex-start; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 28px;
-        gap: 20px;
-      }
-      .avatar-wrap { width: 120px; }
-      .timeline li {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-      section.panel { padding: 22px 20px; }
-      .section-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .hero { padding: 14px; }
+      .identity-card { grid-template-columns: 1fr; padding: 22px; }
+      .avatar-wrap { width: 118px; }
+      .research-strip, .summary-grid, .side-nav { grid-template-columns: 1fr; }
+      section.panel { padding: 24px 20px; }
+      .section-head { grid-template-columns: 1fr; gap: 6px; }
+      .timeline li { grid-template-columns: 1fr; gap: 6px; }
+      .timeline .when { white-space: normal; }
+      .contact-box { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 560px) {
-      .hero-text h1 { font-size: 32px; }
-      .hero-text .subtitle { font-size: 16px; }
-      .meta-pill { font-size: 13px; }
-      nav.primary a { padding: 8px 11px; font-size: 13px; }
+      body { font-size: 15px; }
+      .nav-link { font-size: 13px; padding: 8px 10px; }
+      .identity-card h1 { font-size: 36px; }
+      .identity-card .subtitle { font-size: 16px; }
+      .intro-card { padding: 20px; }
       .section-head h2 { font-size: 21px; }
+      section.panel::before { display: none; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      * { transition: none !important; }
+      * { transition: none !important; animation: none !important; }
+      section.panel { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body id="top">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <div class="container">
+  <div class="page-shell">
     <div class="topbar">
       <nav class="primary" role="navigation" aria-label="主导航">
         <div class="brand-mini">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <strong>Academic Homepage</strong>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>
+            <strong>Academic Homepage</strong>
+            <span>Computer Science · VR · Graphics</span>
+          </span>
         </div>
-        <div class="nav-links">
-          <a href="#bio">简介</a>
-          <a href="#education">教育背景</a>
-          <a href="#experience">教学工作</a>
-          <a href="#projects">科研项目</a>
-          <a href="#teaching_projects">教学项目</a>
-          <a href="#publications">学术成果</a>
-          <a href="#courses">教授课程</a>
-          <a href="#awards">个人业绩</a>
-          <a href="#contact">联系方式</a>
-        </div>
+        <div class="nav-links" id="topNav"></div>
       </nav>
     </div>
 
-    <header class="hero" role="banner">
-      <div class="avatar-wrap">
-        <img class="avatar" src="me.png" alt="任洋甫头像" width="160" height="160" />
-      </div>
-      <div class="hero-text">
-        <div class="eyebrow">Academic Homepage</div>
-        <h1>任洋甫</h1>
-        <p class="subtitle">青海大学计算机技术与应用系 讲师</p>
-        <p class="intro">任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。</p>
-        <div class="hero-meta">
-          <span class="meta-pill">研究方向：虚拟现实与交互</span>
-          <span class="meta-pill">研究方向：计算机图形学</span>
-          <span class="meta-pill">Academic Profile</span>
-        </div>
-      </div>
-    </header>
+    <header class="hero" role="banner" id="hero"></header>
 
     <div class="layout">
-      <aside class="side-panel" aria-label="侧边信息">
-        <h2>页面导览</h2>
-        <p>在不改变原始内容的前提下，采用更克制的视觉语言、更加清晰的信息分层，以及更符合个人学术主页的版式结构。</p>
-        <div class="quick-links">
-          <a href="#publications">查看学术成果</a>
-          <a href="#projects">查看科研项目</a>
-          <a href="#courses">查看教授课程</a>
-          <a href="#contact">联系邮箱</a>
-        </div>
-      </aside>
-
-      <main id="main" class="content-stack" role="main">
-        <section id="bio" class="panel" aria-labelledby="bio-title">
-          <div class="section-head">
-            <h2 id="bio-title">简介</h2>
-            <span class="en">Profile</span>
-          </div>
-          <div class="prose">
-            任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。
-          </div>
-        </section>
-
-        <section id="education" class="panel" aria-labelledby="edu-title">
-          <div class="section-head">
-            <h2 id="edu-title">教育背景</h2>
-            <span class="en">Education</span>
-          </div>
-          <ul class="clean-list timeline">
-            <li><div class="when">2021年9月~至今</div><div class="what">清华大学，计算机科学与技术系，博士学位候选人，博士导师：张松海教授</div></li>
-            <li><div class="when">2012年9月~2015年7月</div><div class="what">云南大学，信息学院，工学硕士学位，硕士导师：普园媛教授</div></li>
-            <li><div class="when">2006年9月~2010年7月</div><div class="what">西北师范大学，物理与电子工程学院，理学学士学位</div></li>
-          </ul>
-        </section>
-
-        <section id="experience" class="panel" aria-labelledby="exp-title">
-          <div class="section-head">
-            <h2 id="exp-title">教学工作经历</h2>
-            <span class="en">Experience</span>
-          </div>
-          <ul class="clean-list timeline">
-            <li><div class="when">2016年9月~至今</div><div class="what">青海大学，计算机技术与应用系，讲师</div></li>
-          </ul>
-        </section>
-
-        <section id="projects" class="panel" aria-labelledby="proj-title">
-          <div class="section-head">
-            <h2 id="proj-title">科研项目</h2>
-            <span class="en">Research Projects</span>
-          </div>
-          <ul class="clean-list">
-            <li><strong>北航虚拟现实技术与系统全国重点实验室2026开放课题：</strong>“面向重定向行走的场景布局影响机制与自适应控制方法研究”；主持。</li>
-            <li><strong>青海大学2019年中青年基金项目：</strong>“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；主持。</li>
-            <li><strong>国家重点研发计划项目：</strong>“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。</li>
-            <li><strong>国家自然科学基金：</strong>“藏毯图像生成及颜色编辑关键技术研究”；2026.01-2029.12；参与。</li>
-            <li><strong>国家自然科学基金：</strong>“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。</li>
-            <li><strong>国家自然科学基金项目：</strong>“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。</li>
-          </ul>
-        </section>
-
-        <section id="teaching_projects" class="panel" aria-labelledby="tproj-title">
-          <div class="section-head">
-            <h2 id="tproj-title">教学项目</h2>
-            <span class="en">Teaching Projects</span>
-          </div>
-          <ul class="clean-list">
-            <li><strong>2020年9月：</strong>《大学计算机》课程：国家级一流线上线下混合式课程</li>
-            <li><strong>2024年1月：</strong>《大学计算机》课程：青海省省级一流线上线下混合式课程</li>
-            <li><strong>2026年4月：</strong>《面向新工科的《虚拟现实技术与应用》课程系统重构与实践研究》：校级教学研究项目</li>
-            <li><strong>2023年6月：</strong>《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目</li>
-            <li><strong>2020年6月：</strong>《计算机系统平台》课程：校级虚拟仿真实验教学建设项目</li>
-            <li><strong>2017年9月：</strong>《计算机系统平台》课程：校级精品课程</li>
-            <li><strong>2018年9月：</strong>《数据库应用基础》课程：校级一类课程建设项目</li>
-            <li><strong>2019年9月：</strong>《数据库应用基础》课程：2019年青海大学课程建设项目</li>
-          </ul>
-        </section>
-
-        <section id="publications" class="panel" aria-labelledby="pub-title">
-          <div class="section-head">
-            <h2 id="pub-title">学术成果</h2>
-            <span class="en">Publications</span>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2025</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors">Xin Du, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Qi-Wen Gan, and Song-Hai Zhang.</span>
-                <span class="title-inline">Perceiving Safety: User Preferences and Perception of Multimodal Virtual Boundary Cues in VR</span>.
-                <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025 CCF-C <strong style="color: #a05a2c;">Best Poster Award</strong>).</span>
-                <span class="year">(2025).</span>
-              </li>
-              <li>
-                <span class="authors">Hong-Ru Ji, Sen-Zhe Xu, <span class="self">Yang-Fu Ren</span>, Fang-Lue Zhang, and Song-Hai Zhang.</span>
-                <span class="title-inline">The Effects of Head Pitch on Translation Gain in Virtual Reality Environments</span>.
-                <span class="publication-info">In Proceedings of the International Conference on Extended Reality (ICXR 2025, CCF-C).</span>
-                <span class="year">(2025).</span>
-              </li>
-              <li>
-                <span class="authors">冀红茹, 任洋甫*, 胥森哲, 张松海.</span>
-                <span class="title-inline">虚拟现实中速度驱动场景缩放对行走与查找效率提升的研究</span>
-                <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025,1-18.</span>
-                <span class="year">(2025).</span>
-              </li>
-              <li>
-                <span class="authors">杜欣, <span class="self">任洋甫</span>, 胥森哲, 等.</span>
-                <span class="title-inline">虚拟现实重定向行走中的场景缩放增益研究</span>
-                <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2025, 46(04): 793-806.</span>
-                <span class="year">(2025).</span>
-              </li>
-              <li>
-                <span class="authors">谢泽华, 傅月瑶, 何煜, 等.</span>
-                <span class="title-inline">俯仰视角影响下的虚拟现实头部旋转增益研究</span>
-                <span class="publication-info">[J]. <span class="venue">计算机科学</span>, 2025, 52(04): 212-221.</span>
-                <span class="year">(2025).</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2024</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors"><span class="self">任洋甫</span>, 于歌, 傅月瑶, 等.</span>
-                <span class="title-inline">虚拟现实中场景和时间对用户空间方向认知的影响</span>
-                <span class="publication-info">[J]. <span class="venue">图学学报</span>, 2024, 45(06): 1349-1363.</span>
-                <span class="year">(2024).</span>
-              </li>
-              <li>
-                <span class="authors"><span class="self">任洋甫</span>, 李志强, 张松海.</span>
-                <span class="title-inline">沉浸式环境中多场景视觉提示信息可视化方法综述</span>
-                <span class="publication-info">[J]. <span class="venue">中国图象图形学报</span>, 2024, 29(01): 1-21.</span>
-                <span class="year">(2024).</span>
-                <span class="doi">DOI:CNKI:SUN:ZGTB.0.2024-01-001.</span>
-              </li>
-              <li>
-                <span class="authors">Liu J H, <span class="self">Ren Y F</span>, Gan Q W, et al.</span>
-                <span class="title-inline">Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques</span>.
-                <span class="publication-info">[J]. <span class="venue">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870.</span>
-                <span class="year">(2024).</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2023</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors">陈朗, <span class="self">任洋甫</span>, 杨培, 等.</span>
-                <span class="title-inline">Dynamic Unet+:一种轻量精确的语义分割算法及应用</span>
-                <span class="publication-info">[J]. <span class="venue">电脑知识与技术</span>, 2023, 19(11): 1-5.</span>
-                <span class="year">(2023).</span>
-                <span class="doi">DOI:<a href="https://doi.org/10.14004/j.cnki.ckt.2023.0602" target="_blank" rel="noopener noreferrer">10.14004/j.cnki.ckt.2023.0602</a>.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2019</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors"><span class="self">任洋甫</span>, 普园媛, 徐丹, 等.</span>
-                <span class="title-inline">语义值驱动的三维直立状态人体模型变形</span>
-                <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2019, 31(03): 476-485.</span>
-                <span class="year">(2019).</span>
-                <span class="doi">DOI:<a href="https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007" target="_blank" rel="noopener noreferrer">10.16182/j.issn1004731x.joss.17DEA-007</a>.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2018</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors">杨培, 陈沿锦, 贾金芳, 等.</span>
-                <span class="title-inline">一种改进的快速迭代阈值选择算法</span>
-                <span class="publication-info">[J]. <span class="venue">青海大学学报</span>, 2018, 36(03): 34-39.</span>
-                <span class="year">(2018).</span>
-                <span class="doi">DOI:<a href="https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006" target="_blank" rel="noopener noreferrer">10.13901/j.cnki.qhwxxbzk.2018.03.006</a>.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="year-block">
-            <h3 class="year-title">2015</h3>
-            <ul class="pub-list">
-              <li>
-                <span class="authors">刘玉清, 普园媛, <span class="self">任洋甫</span>, 等.</span>
-                <span class="title-inline">梵高绘画风格特点的数字化分析</span>
-                <span class="publication-info">[J]. <span class="venue">系统仿真学报</span>, 2015, 27(04): 779-785.</span>
-                <span class="year">(2015).</span>
-                <span class="doi">DOI:<a href="https://doi.org/10.16182/j.cnki.joss.2015.04.015" target="_blank" rel="noopener noreferrer">10.16182/j.cnki.joss.2015.04.015</a>.</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="courses" class="panel" aria-labelledby="course-title">
-          <div class="section-head">
-            <h2 id="course-title">主要教授课程</h2>
-            <span class="en">Courses</span>
-          </div>
-          <div class="badge-line" aria-hidden="true">
-            <span class="soft-badge">虚拟现实技术与应用（2026春季）</span>
-            <span class="soft-badge">人工智能通识（2025秋季）</span>
-            <span class="soft-badge">可视媒体计算与艺术表现（2025秋季）</span>
-          </div>
-          <ul class="clean-list" style="margin-top: 10px;">
-            <li>虚拟现实技术与应用（2026春季）</li>
-            <li>人工智能通识（2025秋季）</li>
-            <li>可视媒体计算与艺术表现（2025秋季）</li>
-            <li>大学计算机</li>
-            <li>计算机系统平台</li>
-            <li>数据分析与处理技术</li>
-            <li>数据库应用基础</li>
-          </ul>
-        </section>
-
-        <section id="awards" class="panel" aria-labelledby="awards-title">
-          <div class="section-head">
-            <h2 id="awards-title">个人业绩</h2>
-            <span class="en">Awards & Honors</span>
-          </div>
-          <ul class="clean-list">
-            <li><strong>2019年：</strong>指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-            <li><strong>2020年：</strong>指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。</li>
-            <li><strong>2021年：</strong>指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。</li>
-            <li><strong>2021年：</strong>获得青海大学本科生优秀毕业论文指导教师。</li>
-            <li><strong>2022年：</strong>参与指导学生获2022年中国大学生计算机设计大赛三等奖。</li>
-            <li><strong>2024年：</strong>指导学生获得全国大学生虚拟现实创新设计竞赛国赛二等奖。</li>
-            <li><strong>2025年：</strong>参与指导学生获2025年中国大学生计算机设计大赛西北赛区三等奖。</li>
-          </ul>
-        </section>
-
-        <section id="contact" class="panel" aria-labelledby="contact-title">
-          <div class="section-head">
-            <h2 id="contact-title">联系方式</h2>
-            <span class="en">Contact</span>
-          </div>
-          <address>
-            邮箱：
-            <a href="mailto:renyangfu@qhu.edu.cn">renyangfu@qhu.edu.cn</a>
-            或
-            <a href="mailto:ryf21@mails.tsinghua.edu.cn">ryf21@mails.tsinghua.edu.cn</a>
-          </address>
-          <div class="contact-note">请对课题组研究方向有兴趣的同学，请附个人简历和自我介绍发送邮件联系我。</div>
-        </section>
-      </main>
+      <aside class="side-panel" aria-label="页面索引与联系信息" id="sidePanel"></aside>
+      <main id="main" class="content-stack" role="main"></main>
     </div>
 
-    <footer role="contentinfo">
-      <p>&copy; 2025 任洋甫</p>
-    </footer>
+    <footer role="contentinfo"><p id="footerText"></p></footer>
   </div>
 
   <a href="#top" class="to-top" id="toTopBtn" aria-label="回到顶部">↑</a>
+  <div class="toast" id="toast" role="status" aria-live="polite">邮箱已复制</div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
+    /*
+      ============================================================
+      内容更新区：以后主要只改下面这个 SITE_DATA
+      ============================================================
+
+      常见更新方式：
+      1. 新增论文：在 publications 数组最前面复制一个 { ... }，修改 year/authorsHtml/title/venue 即可。
+      2. 新增科研项目：在 researchProjects 数组中新增一行对象。
+      3. 新增课程：在 courses 数组中新增一个字符串。
+      4. 新增获奖/指导：在 awards 数组中新增一个 { year, text }。
+      5. 修改邮箱：只改 profile.emails。
+      6. 页面结构和样式不用动，系统会自动渲染导航、左侧目录、论文年份索引和主体内容。
+
+      注意：
+      - 普通文字直接写字符串。
+      - 论文作者需要高亮本人时，可以使用 <span class="self">任洋甫</span>。
+      - DOI 有链接时使用 doiUrl；没有链接时只填 doiText。
+    */
+    const SITE_DATA = {
+      profile: {
+        name: "任洋甫",
+        title: "青海大学计算机技术与应用系 讲师",
+        role: "讲师",
+        affiliation: "青海大学 · 计算机技术与应用系",
+        avatar: "me.png",
+        intro: "任洋甫目前是青海大学计算机技术与应用系的讲师，GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。研究方向主要包括虚拟现实与交互，计算机图形学。获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。",
+        researchFocus: ["虚拟现实与交互", "计算机图形学"],
+        keywords: ["VR", "交互", "图形学", "可视化"],
+        academicIdentity: "GDC专委委员、干事，CCF虚拟现实与可视化技术专业委员会执行委员，CCF专业会员、GDC会员。",
+        talent: "获批2025年度青海省“昆仑英才·高端创新创业人才”拔尖创新人才。",
+        emails: ["renyangfu@qhu.edu.cn", "ryf21@mails.tsinghua.edu.cn"],
+        contactNote: "请对课题组研究方向有兴趣的同学，请附个人简历和自我介绍发送邮件联系我。",
+        footer: "© 2025 任洋甫"
+      },
+
+      sections: [
+        { id: "bio", number: "01", title: "简介", en: "Profile" },
+        { id: "education", number: "02", title: "教育背景", en: "Education" },
+        { id: "experience", number: "03", title: "教学工作", en: "Experience" },
+        { id: "projects", number: "04", title: "科研项目", en: "Research Projects" },
+        { id: "teaching_projects", number: "05", title: "教学项目", en: "Teaching Projects" },
+        { id: "publications", number: "06", title: "学术成果", en: "Publications" },
+        { id: "courses", number: "07", title: "教授课程", en: "Courses" },
+        { id: "awards", number: "08", title: "个人业绩", en: "Awards & Honors" },
+        { id: "contact", number: "09", title: "联系方式", en: "Contact" }
+      ],
+
+      education: [
+        { when: "2021年9月~至今", what: "清华大学，计算机科学与技术系，博士学位候选人，博士导师：张松海教授" },
+        { when: "2012年9月~2015年7月", what: "云南大学，信息学院，工学硕士学位，硕士导师：普园媛教授" },
+        { when: "2006年9月~2010年7月", what: "西北师范大学，物理与电子工程学院，理学学士学位" }
+      ],
+
+      experience: [
+        { when: "2016年9月~至今", what: "青海大学，计算机技术与应用系，讲师" }
+      ],
+
+      researchProjects: [
+        { label: "北航虚拟现实技术与系统全国重点实验室2026开放课题", text: "“面向重定向行走的场景布局影响机制与自适应控制方法研究”；主持。" },
+        { label: "青海大学2019年中青年基金项目", text: "“基于视觉语义的短视频内容分析及研究”；2019.11 - 2022.12；主持。" },
+        { label: "国家重点研发计划项目", text: "“三维数字交互引擎关键技术研发与开发应用生态构建”；2023年11月 至 2026年10月，参与。" },
+        { label: "国家自然科学基金", text: "“藏毯图像生成及颜色编辑关键技术研究”；2026.01-2029.12；参与。" },
+        { label: "国家自然科学基金", text: "“全景视觉数据分析、处理与VR交互”；2022.01-2026.12；参与。" },
+        { label: "国家自然科学基金项目", text: "“全景视频感知理解及呈现关键技术研究”；2019.01-2022.12；参与。" }
+      ],
+
+      teachingProjects: [
+        { date: "2020年9月", text: "《大学计算机》课程：国家级一流线上线下混合式课程" },
+        { date: "2024年1月", text: "《大学计算机》课程：青海省省级一流线上线下混合式课程" },
+        { date: "2026年4月", text: "《面向新工科的《虚拟现实技术与应用》课程系统重构与实践研究》：校级教学研究项目" },
+        { date: "2023年6月", text: "《基于可视媒体计算与艺术表现专题提高计算机专业学生科研素养的应用研究--以青海大学为例》：校级教学研究项目" },
+        { date: "2020年6月", text: "《计算机系统平台》课程：校级虚拟仿真实验教学建设项目" },
+        { date: "2017年9月", text: "《计算机系统平台》课程：校级精品课程" },
+        { date: "2018年9月", text: "《数据库应用基础》课程：校级一类课程建设项目" },
+        { date: "2019年9月", text: "《数据库应用基础》课程：2019年青海大学课程建设项目" }
+      ],
+
+      publications: [
+        {
+          year: "2025",
+          authorsHtml: "Xin Du, Sen-Zhe Xu, <span class=\"self\">Yang-Fu Ren</span>, Qi-Wen Gan, and Song-Hai Zhang.",
+          title: "Perceiving Safety: User Preferences and Perception of Multimodal Virtual Boundary Cues in VR",
+          venueHtml: "In Proceedings of the International Conference on Extended Reality (ICXR 2025 CCF-C <strong style=\"color: #a05a2c;\">Best Poster Award</strong>)."
+        },
+        {
+          year: "2025",
+          authorsHtml: "Hong-Ru Ji, Sen-Zhe Xu, <span class=\"self\">Yang-Fu Ren</span>, Fang-Lue Zhang, and Song-Hai Zhang.",
+          title: "The Effects of Head Pitch on Translation Gain in Virtual Reality Environments",
+          venueHtml: "In Proceedings of the International Conference on Extended Reality (ICXR 2025, CCF-C)."
+        },
+        {
+          year: "2025",
+          authorsHtml: "冀红茹, 任洋甫*, 胥森哲, 张松海.",
+          title: "虚拟现实中速度驱动场景缩放对行走与查找效率提升的研究",
+          venueHtml: "[J]. <span class=\"venue\">计算机科学</span>, 2025,1-18."
+        },
+        {
+          year: "2025",
+          authorsHtml: "杜欣, <span class=\"self\">任洋甫</span>, 胥森哲, 等.",
+          title: "虚拟现实重定向行走中的场景缩放增益研究",
+          venueHtml: "[J]. <span class=\"venue\">图学学报</span>, 2025, 46(04): 793-806."
+        },
+        {
+          year: "2025",
+          authorsHtml: "谢泽华, 傅月瑶, 何煜, 等.",
+          title: "俯仰视角影响下的虚拟现实头部旋转增益研究",
+          venueHtml: "[J]. <span class=\"venue\">计算机科学</span>, 2025, 52(04): 212-221."
+        },
+        {
+          year: "2024",
+          authorsHtml: "<span class=\"self\">任洋甫</span>, 于歌, 傅月瑶, 等.",
+          title: "虚拟现实中场景和时间对用户空间方向认知的影响",
+          venueHtml: "[J]. <span class=\"venue\">图学学报</span>, 2024, 45(06): 1349-1363."
+        },
+        {
+          year: "2024",
+          authorsHtml: "<span class=\"self\">任洋甫</span>, 李志强, 张松海.",
+          title: "沉浸式环境中多场景视觉提示信息可视化方法综述",
+          venueHtml: "[J]. <span class=\"venue\">中国图象图形学报</span>, 2024, 29(01): 1-21.",
+          doiText: "CNKI:SUN:ZGTB.0.2024-01-001"
+        },
+        {
+          year: "2024",
+          authorsHtml: "Liu J H, <span class=\"self\">Ren Y F</span>, Gan Q W, et al.",
+          title: "Overcoming Spatial Constraints in VR: A Survey of Redirected Walking Techniques",
+          venueHtml: "[J]. <span class=\"venue\">Journal of Computer Science and Technology</span>, 2024, 39(4): 841-870."
+        },
+        {
+          year: "2023",
+          authorsHtml: "陈朗, <span class=\"self\">任洋甫</span>, 杨培, 等.",
+          title: "Dynamic Unet+:一种轻量精确的语义分割算法及应用",
+          venueHtml: "[J]. <span class=\"venue\">电脑知识与技术</span>, 2023, 19(11): 1-5.",
+          doiText: "10.14004/j.cnki.ckt.2023.0602",
+          doiUrl: "https://doi.org/10.14004/j.cnki.ckt.2023.0602"
+        },
+        {
+          year: "2019",
+          authorsHtml: "<span class=\"self\">任洋甫</span>, 普园媛, 徐丹, 等.",
+          title: "语义值驱动的三维直立状态人体模型变形",
+          venueHtml: "[J]. <span class=\"venue\">系统仿真学报</span>, 2019, 31(03): 476-485.",
+          doiText: "10.16182/j.issn1004731x.joss.17DEA-007",
+          doiUrl: "https://doi.org/10.16182/j.issn1004731x.joss.17DEA-007"
+        },
+        {
+          year: "2018",
+          authorsHtml: "杨培, 陈沿锦, 贾金芳, 等.",
+          title: "一种改进的快速迭代阈值选择算法",
+          venueHtml: "[J]. <span class=\"venue\">青海大学学报</span>, 2018, 36(03): 34-39.",
+          doiText: "10.13901/j.cnki.qhwxxbzk.2018.03.006",
+          doiUrl: "https://doi.org/10.13901/j.cnki.qhwxxbzk.2018.03.006"
+        },
+        {
+          year: "2015",
+          authorsHtml: "刘玉清, 普园媛, <span class=\"self\">任洋甫</span>, 等.",
+          title: "梵高绘画风格特点的数字化分析",
+          venueHtml: "[J]. <span class=\"venue\">系统仿真学报</span>, 2015, 27(04): 779-785.",
+          doiText: "10.16182/j.cnki.joss.2015.04.015",
+          doiUrl: "https://doi.org/10.16182/j.cnki.joss.2015.04.015"
+        }
+      ],
+
+      courses: [
+        "虚拟现实技术与应用（2026春季）",
+        "人工智能通识（2025秋季）",
+        "可视媒体计算与艺术表现（2025秋季）",
+        "大学计算机",
+        "计算机系统平台",
+        "数据分析与处理技术",
+        "数据库应用基础"
+      ],
+
+      awards: [
+        { year: "2019年", text: "指导学生获得第三届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。" },
+        { year: "2020年", text: "指导学生获得第四届“龙芯杯”全国系统能力培养大赛全国团体三等奖，并获得优秀指导教师称号。" },
+        { year: "2021年", text: "指导学生获得第五届“龙芯杯”全国系统能力培养大赛全国团体优胜奖，并获得优秀指导教师称号。" },
+        { year: "2021年", text: "获得青海大学本科生优秀毕业论文指导教师。" },
+        { year: "2022年", text: "参与指导学生获2022年中国大学生计算机设计大赛三等奖。" },
+        { year: "2024年", text: "指导学生获得全国大学生虚拟现实创新设计竞赛国赛二等奖。" },
+        { year: "2025年", text: "参与指导学生获2025年中国大学生计算机设计大赛西北赛区三等奖。" }
+      ]
+    };
+
+    const el = (tag, attrs = {}, html = "") => {
+      const node = document.createElement(tag);
+      Object.entries(attrs).forEach(([key, value]) => {
+        if (key === "class") node.className = value;
+        else if (key === "dataset") Object.entries(value).forEach(([k, v]) => node.dataset[k] = v);
+        else node.setAttribute(key, value);
+      });
+      node.innerHTML = html;
+      return node;
+    };
+
+    const sectionHead = section => `
+      <div class="section-head">
+        <h2 id="${section.id}-title">${section.title}</h2>
+        <span class="en">${section.en}</span>
+      </div>`;
+
+    const plainList = items => `<ul class="clean-list">${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+    const timelineList = items => `<ul class="clean-list timeline">${items.map(item => `<li><div class="when">${item.when}</div><div class="what">${item.what}</div></li>`).join("")}</ul>`;
+
+    const groupedPublications = publications => publications.reduce((map, pub) => {
+      if (!map[pub.year]) map[pub.year] = [];
+      map[pub.year].push(pub);
+      return map;
+    }, {});
+
+    const publicationHtml = pub => {
+      const doi = pub.doiText
+        ? `<span class="doi">DOI:${pub.doiUrl ? `<a href="${pub.doiUrl}" target="_blank" rel="noopener noreferrer">${pub.doiText}</a>` : pub.doiText}.</span>`
+        : "";
+      return `
+        <li>
+          <span class="authors">${pub.authorsHtml}</span>
+          <span class="title-inline">${pub.title}</span>.
+          <span class="publication-info">${pub.venueHtml}</span>
+          <span class="year">(${pub.year}).</span>
+          ${doi}
+        </li>`;
+    };
+
+    const renderHero = () => {
+      const p = SITE_DATA.profile;
+      document.getElementById("hero").innerHTML = `
+        <div class="identity-card">
+          <div>
+            <div class="avatar-wrap">
+              <img class="avatar" src="${p.avatar}" alt="${p.name}头像" width="160" height="160" />
+            </div>
+          </div>
+          <div>
+            <div class="hero-kicker">Academic Homepage</div>
+            <h1>${p.name}</h1>
+            <p class="subtitle">${p.title}</p>
+          </div>
+          <div class="identity-footer" aria-label="研究方向摘要">
+            research_focus = [${p.researchFocus.map(item => `"${item}"`).join(", ")}]<br />
+            affiliation = "${p.affiliation}"
+          </div>
+        </div>
+        <div class="hero-main">
+          <div class="intro-card"><p class="intro">${p.intro}</p></div>
+          <div class="research-strip" aria-label="主页重点信息">
+            ${p.researchFocus.map(item => `<div class="research-chip"><span>Research Direction</span><strong>研究方向：${item}</strong></div>`).join("")}
+            <div class="research-chip"><span>Profile</span><strong>Academic Profile</strong></div>
+          </div>
+          <div class="summary-grid">
+            <div class="summary-card"><h2>学术身份</h2><p>${p.academicIdentity}</p></div>
+            <div class="summary-card"><h2>人才项目</h2><p>${p.talent}</p></div>
+          </div>
+        </div>`;
+    };
+
+    const renderNavigation = () => {
+      const topNav = document.getElementById("topNav");
+      topNav.innerHTML = SITE_DATA.sections.map(s => `<a class="nav-link" href="#${s.id}">${s.title}</a>`).join("");
+
+      const years = [...new Set(SITE_DATA.publications.map(pub => pub.year))];
+      const p = SITE_DATA.profile;
+      document.getElementById("sidePanel").innerHTML = `
+        <div class="side-card side-profile">
+          <h2 class="name">${p.name}</h2>
+          <p class="role">${p.role}</p>
+          <p class="affiliation">${p.affiliation}</p>
+          <div class="keyword-list" aria-label="研究关键词">
+            ${p.keywords.map(k => `<span class="keyword">${k}</span>`).join("")}
+          </div>
+        </div>
+        <div class="side-card side-directory">
+          <div class="side-section">
+            <h2 class="side-title">Contents</h2>
+            <nav class="side-nav" aria-label="页面目录">
+              ${SITE_DATA.sections.map(s => `<a href="#${s.id}"><span>${s.number}</span><span>${s.title}</span></a>`).join("")}
+            </nav>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-section">
+            <h2 class="side-title">Publications</h2>
+            <div class="year-index" aria-label="学术成果年份索引">
+              ${years.map(y => `<a href="#year-${y}">${y}</a>`).join("")}
+            </div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-section">
+            <h2 class="side-title">Contact</h2>
+            <div class="email-actions">
+              ${p.emails.map(email => `<a href="mailto:${email}">${email}</a>`).join("")}
+              <button class="copy-email" type="button" data-copy="${p.emails[0]}">复制常用邮箱</button>
+            </div>
+          </div>
+        </div>`;
+    };
+
+    const renderMain = () => {
+      const main = document.getElementById("main");
+      const s = Object.fromEntries(SITE_DATA.sections.map(section => [section.id, section]));
+      const pubsByYear = groupedPublications(SITE_DATA.publications);
+
+      main.innerHTML = `
+        <section id="bio" class="panel" aria-labelledby="bio-title" data-index="01">
+          ${sectionHead(s.bio)}
+          <div class="prose">${SITE_DATA.profile.intro}</div>
+        </section>
+
+        <section id="education" class="panel" aria-labelledby="education-title" data-index="02">
+          ${sectionHead(s.education)}
+          ${timelineList(SITE_DATA.education)}
+        </section>
+
+        <section id="experience" class="panel" aria-labelledby="experience-title" data-index="03">
+          ${sectionHead(s.experience)}
+          ${timelineList(SITE_DATA.experience)}
+        </section>
+
+        <section id="projects" class="panel" aria-labelledby="projects-title" data-index="04">
+          ${sectionHead(s.projects)}
+          <ul class="clean-list">
+            ${SITE_DATA.researchProjects.map(item => `<li><strong>${item.label}：</strong>${item.text}</li>`).join("")}
+          </ul>
+        </section>
+
+        <section id="teaching_projects" class="panel" aria-labelledby="teaching_projects-title" data-index="05">
+          ${sectionHead(s.teaching_projects)}
+          <ul class="clean-list">
+            ${SITE_DATA.teachingProjects.map(item => `<li><strong>${item.date}：</strong>${item.text}</li>`).join("")}
+          </ul>
+        </section>
+
+        <section id="publications" class="panel" aria-labelledby="publications-title" data-index="06">
+          ${sectionHead(s.publications)}
+          ${Object.entries(pubsByYear).map(([year, pubs]) => `
+            <div class="year-block" id="year-${year}">
+              <h3 class="year-title">${year}</h3>
+              <ul class="pub-list">${pubs.map(publicationHtml).join("")}</ul>
+            </div>
+          `).join("")}
+        </section>
+
+        <section id="courses" class="panel" aria-labelledby="courses-title" data-index="07">
+          ${sectionHead(s.courses)}
+          <div class="badge-line" aria-hidden="true">
+            ${SITE_DATA.courses.slice(0, 3).map(course => `<span class="soft-badge">${course}</span>`).join("")}
+          </div>
+          ${plainList(SITE_DATA.courses)}
+        </section>
+
+        <section id="awards" class="panel" aria-labelledby="awards-title" data-index="08">
+          ${sectionHead(s.awards)}
+          <ul class="clean-list">
+            ${SITE_DATA.awards.map(item => `<li><strong>${item.year}：</strong>${item.text}</li>`).join("")}
+          </ul>
+        </section>
+
+        <section id="contact" class="panel" aria-labelledby="contact-title" data-index="09">
+          ${sectionHead(s.contact)}
+          <div class="contact-box">
+            <address>
+              邮箱：${SITE_DATA.profile.emails.map(email => `<a href="mailto:${email}">${email}</a>`).join(" 或 ")}
+            </address>
+            <button class="copy-email" type="button" data-copy="${SITE_DATA.profile.emails[0]}">复制常用邮箱</button>
+          </div>
+          <div class="contact-note">${SITE_DATA.profile.contactNote}</div>
+        </section>`;
+
+      document.getElementById("footerText").textContent = SITE_DATA.profile.footer;
+    };
+
+    const setupInteraction = () => {
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      const topNavLinks = document.querySelectorAll('nav.primary a[href^="#"]');
+      const sideNavLinks = document.querySelectorAll('.side-nav a[href^="#"]');
       const sections = document.querySelectorAll('main section[id]');
+      const panels = document.querySelectorAll('section.panel');
       const toTop = document.getElementById('toTopBtn');
+      const progress = document.getElementById('scrollProgress');
+      const toast = document.getElementById('toast');
 
       const setActive = () => {
         let current = '';
         sections.forEach(section => {
           const rect = section.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            current = '#' + section.id;
-          }
+          if (rect.top <= 140 && rect.bottom >= 140) current = '#' + section.id;
         });
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === current) {
-            link.setAttribute('aria-current', 'page');
-          } else {
-            link.removeAttribute('aria-current');
-          }
+        [...topNavLinks, ...sideNavLinks].forEach(link => {
+          if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
         });
+      };
+
+      const updateProgress = () => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - doc.clientHeight;
+        const ratio = max > 0 ? window.scrollY / max : 0;
+        progress.style.transform = `scaleX(${Math.min(Math.max(ratio, 0), 1)})`;
       };
 
       const toggleTop = () => {
@@ -926,10 +698,11 @@
       navLinks.forEach(link => {
         link.addEventListener('click', e => {
           const id = link.getAttribute('href');
+          if (!id || id === '#') return;
           const target = document.querySelector(id);
           if (!target) return;
           e.preventDefault();
-          const y = target.getBoundingClientRect().top + window.pageYOffset - 88;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - 96;
           window.scrollTo({ top: y, behavior: 'smooth' });
           history.pushState(null, '', id);
         });
@@ -940,22 +713,52 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      setActive();
-      toggleTop();
-      document.addEventListener('scroll', () => {
-        setActive();
-        toggleTop();
-      }, { passive: true });
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      panels.forEach(panel => revealObserver.observe(panel));
+
+      document.querySelectorAll('.copy-email').forEach(button => {
+        button.addEventListener('click', async () => {
+          const text = button.getAttribute('data-copy') || SITE_DATA.profile.emails[0];
+          try {
+            await navigator.clipboard.writeText(text);
+            toast.textContent = '邮箱已复制：' + text;
+          } catch (error) {
+            toast.textContent = '邮箱：' + text;
+          }
+          toast.classList.add('show');
+          window.clearTimeout(window.__emailToastTimer);
+          window.__emailToastTimer = window.setTimeout(() => toast.classList.remove('show'), 1800);
+        });
+      });
+
+      const updateAll = () => { setActive(); toggleTop(); updateProgress(); };
+      updateAll();
+      document.addEventListener('scroll', updateAll, { passive: true });
+      window.addEventListener('resize', updateAll);
 
       if (location.hash) {
         const target = document.querySelector(location.hash);
         if (target) {
           setTimeout(() => {
-            const y = target.getBoundingClientRect().top + window.pageYOffset - 88;
+            const y = target.getBoundingClientRect().top + window.pageYOffset - 96;
             window.scrollTo({ top: y, behavior: 'smooth' });
           }, 60);
         }
       }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHero();
+      renderNavigation();
+      renderMain();
+      setupInteraction();
     });
   </script>
 </body>
