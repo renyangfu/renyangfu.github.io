@@ -23,6 +23,17 @@ window.SITE_DATA = {
         footer: "© 2025 任洋甫"
       },
 
+      researchVisual: {
+        title: "智能重定向行走 · Interactive Research Visualization",
+        hint: "移动鼠标探索 · Hover to explore",
+        stages: [
+          { key: "understand", en: "UNDERSTAND", label: "空间理解", detail: "虚拟旅游空间、真实物理空间与动态用户状态" },
+          { key: "predict", en: "PREDICT", label: "风险预测", detail: "短时运动趋势、未来空间占用与潜在冲突" },
+          { key: "guide", en: "GUIDE", label: "智能引导", detail: "虚拟导览智能体通过空间行为影响行走方向" },
+          { key: "redirect", en: "REDIRECT", label: "协同重定向", detail: "在有限物理空间中调节真实轨迹并保持虚拟漫游连续" }
+        ]
+      },
+
       sections: [
         { id: "bio", number: "01", title: "简介", en: "Profile" },
         { id: "education", number: "02", title: "教育背景", en: "Education" },
