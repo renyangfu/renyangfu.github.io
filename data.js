@@ -77,6 +77,12 @@ window.SITE_DATA = {
       ],
 
       publications: [
+        {
+        year: "2026",
+        authorsHtml: "Si-Cheng Chen, Shao-Kui Zhang, Jia-Hong Liu, <span class=\"self\">Yang-Fu Ren</span>, Song-Hai Zhang.",
+        title: "An Interactive 3D Indoor Scene Design System via Next-Furniture Prediction and Collaborative Feedback",
+        venueHtml: "<span class=\"venue\">ICXR 2026</span> (CCF-C), XR Gallery, Full Paper (Accepted). <a href=\"https://icxr.net/2026/ProgramXRGallery.html\" target=\"_blank\" rel=\"noopener noreferrer\">Official Program</a>"
+        },
         { 
             year: "2026",
             authorsHtml: "陈思成, 张少魁, 刘家宏, <span class=\"self\">任洋甫</span>*, 张松海.",
