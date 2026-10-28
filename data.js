@@ -77,11 +77,11 @@ window.SITE_DATA = {
       ],
 
       publications: [
-        {
-          year: "2026",
-          authorsHtml: "陈思成, 张少魁, 刘家宏, <span class=\"self\">任洋甫</span>*, 张松海.",
-          title: "基于特征解耦的交互式3D室内场景生成与推荐系统",
-          venueHtml: "GDC 2026 录用，拟推荐 <span class=\"venue\">图学学报</span>. <span style=\"display:inline-block;margin-left:6px;padding:1px 6px;border-radius:10px;background-color:#e60012;color:#fff;font-size:12px;font-weight:700;line-height:1.4;vertical-align:middle;\">New</span>"
+        { 
+            year: "2026",
+            authorsHtml: "陈思成, 张少魁, 刘家宏, <span class=\"self\">任洋甫</span>*, 张松海.",
+            title: "基于低维连续隐空间表示的交互式3D室内场景生成与推荐系统",
+            venueHtml: "<span class=\"venue\">图学学报</span>, 2026 (网络首发: 2026-10-22). <a href=\"https://link.cnki.net/urlid/10.1034.t.20261022.1004.002\" target=\"_blank\" rel=\"noopener noreferrer\">CNKI</a>"
         },
         {
           year: "2025",
